@@ -52,7 +52,7 @@ tipo varchar(15) not null,
 placa varchar(25) not null,
 dominio varchar(15) not null,
 color varchar(15) not null,
-nummotor int not null,
+num_motor varchar(15) not null,
 clase varchar(15) not null,
 marca varchar(15) not null,
 fecha date,
@@ -61,16 +61,20 @@ fecha date,
 id_mecanico int,
 foreign Key (id_mecanico) references mecanico(id_mecanico)
 );
-INSERT INTO vehiculo(modelo,tipo,placa,dominio,color,nummotor,clase,marca,fecha,id_mecanico) VALUES 
+
+select * from vehiculo;
+
+/*
+INSERT INTO vehiculo(modelo,tipo,placa,dominio,color,motor,clase,marca,fecha,id_mecanico) VALUES 
 ('R34 M-SPEC','deportivo','P1 -E16','Propiedad','azul',243242424,'Automovil(d)', 'Nissan','2005/2/12',1),
 (' GT-R R35','deportivo','l1 -E56','Propiedad','rojo', 313131235,'Automovil(s)', 'Nissan','2006/3/9',2),
 ('supra mk4',' deportivo','k3 -G59','Propiedad','amarillo',432564513,'Automovil(s)', 'Toyota','2003/5/11',3),
 ('Lancer Evolution','deportivo compacto','f2 -323d','Propiedad','rojo',381039192,'Automovil(c)', 'Mitsubishi','2011/8/2',2),
 ('Porsche 911 GT3','Sports car ', 'h3 -83d','Propiedad','blanco',432613693,'Automovil(s)', 'Porsche', '2003/2/9',1);
+*/
 
-
-create table cliente(
-id_cliente serial primary key  auto_increment,
+create table if not exists cliente(
+id_cliente serial primary key,
 nombre varchar(50) not null,
 apellido varchar(30) not null,
 genero varchar(30) not null,
