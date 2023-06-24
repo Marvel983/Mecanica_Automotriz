@@ -44,7 +44,7 @@
                 <input placeholder="Password" type="password" tabindex="1" required autofocus>
             </fieldset>                                                                                                                                                                 
             <fieldset>
-                <button name="register" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                <button name="register" type="submit" id="contact-submit" data-submit="...Sending">Registrarse</button>
             </fieldset>
         </form>
         <?php

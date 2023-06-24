@@ -39,12 +39,12 @@
             </fieldset>
             <fieldset>
                 <input placeholder="Año del vehiculo" name="fecha" type="text" required autofocus>
-            </fieldset>   
+            </fieldset>  
             <fieldset>
-                <button name="register_vehiculo" type="submit" id="contact-submit" data-submit="...Sending">Registrar</button>
+                <button type="button"><a href="../html/index.php">Regresar</a></button>
             </fieldset>
             <fieldset>
-                <button type="buttom" id="contact-submit">Regresar</button>
+                <button name="register_vehiculo" type="submit" id="contact-submit" data-submit="...Sending">Registrar</button>
             </fieldset>
         </form>
         <?php
