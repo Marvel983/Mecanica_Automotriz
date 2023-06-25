@@ -11,7 +11,7 @@ dirección varchar(100) not null
 );
 
 create table if not exists cargo(
-id int primary key auto_increment,
+id int(11) primary key,
 descripción varchar(250) not null
 );
 
@@ -72,7 +72,11 @@ correo varchar(30) not null,
 dui varchar(25) not null,
 fecha_nac  date not null,
 vehículo int(11) not null,
+cargo int(11) not null,
 constraint foreign Key (vehículo) references vehículo(id_vehículo)
+ON UPDATE CASCADE
+ON DELETE CASCADE,
+constraint foreign key (cargo) references cargo(id)
 ON UPDATE CASCADE
 ON DELETE CASCADE
 );
@@ -132,28 +136,28 @@ INSERT INTO vehículo(modelo,tipo,placa,dominio,color,num_motor,clase,marca,fech
 
 
 
-INSERT INTO cliente (nombre,apellido,genero,dirección, teléfono, tarjeta,correo,dui,fecha_nac,vehículo) VALUES 
-('Ricardo Daniel','Guevara Avelar','hombre','43j Calle Poniente', '35849023', '93242','avelar@gmail.com', '328023109-0','2000/4/4',6),
-('Juan Jose','Galdamez Soto', 'hombre','CP 2342','23436524', '1802371','galdamez@gmail.com', '9274829380-0','2002/12/6',6), 
-('Marcos-Antonio','avila bernal','hombre','8, San Salvador CP 6456', '913212', '4242424267','avilar@gmail.com', '32342561-5','2003/2/10',7),
-('Luis Francisco','Estradela Guzman','hombre','La libertad  CP 5431', '202852196', '35630922','estradela@gmail.com', '42342347-8','2002/1/2',8),
-('Jose Julian','Garcia Alvarez','hombre','san Salvador CP 2426', '42349426', '0434923492','garcias@gmail.com', '32409829-3','2000/1/2',9);
+INSERT INTO cliente (nombre,apellido,genero,dirección, teléfono, tarjeta,correo,dui,fecha_nac,vehículo,cargo) VALUES 
+('Ricardo Daniel','Guevara Avelar','hombre','43j Calle Poniente', '35849023', '93242','avelar@gmail.com', '328023109-0','2000/4/4',6,2),
+('Juan Jose','Galdamez Soto', 'hombre','CP 2342','23436524', '1802371','galdamez@gmail.com', '9274829380-0','2002/12/6',6,2), 
+('Marcos-Antonio','avila bernal','hombre','8, San Salvador CP 6456', '913212', '4242424267','avilar@gmail.com', '32342561-5','2003/2/10',7,2),
+('Luis Francisco','Estradela Guzman','hombre','La libertad  CP 5431', '202852196', '35630922','estradela@gmail.com', '42342347-8','2002/1/2',8,2),
+('Jose Julian','Garcia Alvarez','hombre','san Salvador CP 2426', '42349426', '0434923492','garcias@gmail.com', '32409829-3','2000/1/2',9,2);
 
 
 
 INSERT INTO reserva (razón, costo,fecha_res,servicio,cliente) VALUES 
-('Revision General del r34','$50','2023/5/3',3,31),
-('Cambio de pintura al carro r35 color azul','$150','2023/01/24',2,32),
-('revision de frenos del Porsche','$60','2022/8/4',3,34),
-('Cambio de pintura al evolution color verde','$100','2022/10/12',2,33),
-('Limpieza interna del supra','$100','2022/1/13',1,37);
+('Revision General del r34','$50','2023/5/3',3,1),
+('Cambio de pintura al carro r35 color azul','$150','2023/01/24',2,2),
+('revision de frenos del Porsche','$60','2022/8/4',3,4),
+('Cambio de pintura al evolution color verde','$100','2022/10/12',2,3),
+('Limpieza interna del supra','$100','2022/1/13',1,7);
 
 
 
 INSERT INTO reporte (descripción, fecha,mecánico,cliente) VALUES 
-('Cambio de pintura al carro r35 color azul','2023/01/24',2,31),
-('Cambio de pintura al evolution color verde','2022/10/12',2,32),
-('Revision General del r34','2023/3/5',1,33),
-('Limpieza interna del supra4','2022/1/13',3,34),
-('revision de frenos del Porsche','2022/8/4',1,35);
+('Cambio de pintura al carro r35 color azul','2023/01/24',2,1),
+('Cambio de pintura al evolution color verde','2022/10/12',2,2),
+('Revision General del r34','2023/3/5',1,3),
+('Limpieza interna del supra4','2022/1/13',3,4),
+('revision de frenos del Porsche','2022/8/4',1,5);
 */

@@ -1,8 +1,8 @@
 @import url("../css/index.css");
 
 #container {
-  width: 80%;
-  max-width: 2000px;
+  width: 90%;
+  max-width: 2200px;
   height: 700px;
   margin: 0 auto;
   display: flex;
@@ -151,4 +151,23 @@ a {
 #contact textarea:focus {
   outline: 0;
   border: 1px solid #aaa;
+}
+
+#iButt{
+  width: 25px;
+  height: 25px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  color: red;
+  cursor: pointer;
+}
+
+#idInput{
+  display: none !important;
+}
+
+#iButt i{
+  font-size: 20px;
+  color: red;
 }

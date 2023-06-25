@@ -4,7 +4,7 @@ require_once('../php/conex.php');
 require_once('../php/methods.php');
 
 $obj = new métodosCrud();
-$sql = "SELECT * FROM mecánico Limit 3";
+$sql = "SELECT * FROM mecánico";
 $datos = $obj->showData($sql);
 
 ?>
@@ -42,6 +42,7 @@ $datos = $obj->showData($sql);
                     <td>Genero</td>
                     <td>Pago</td>
                     <td>Taller</td>
+                    <td>Borrar</td>
                 </thead>
                 <?php
                 if ($datos) {
@@ -77,6 +78,14 @@ $datos = $obj->showData($sql);
                             </td>
                             <td>
                                 <?php echo $key['id_taller']; ?>
+                            </td>
+                            <td>
+                                <form method="POST">
+                                <button id="iButt" type="submit" name="iButt">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                                <input type="text" name="ide" id="idInput" value="<?php echo $key['id_mecánico']; ?>">
+                                </form>
                             </td>
                         </tr>
                         <?php
@@ -140,7 +149,7 @@ $datos = $obj->showData($sql);
                             Mecánico</button>
                     </fieldset>
                 </form>
-                <?php 
+                <?php
                 if (isset($_POST['mecaForm'])) {
                     $nombre = $_POST['nombre'];
                     $apellido = $_POST['apellido'];
@@ -168,10 +177,22 @@ $datos = $obj->showData($sql);
 
                     $obj->insertData($arr);
 
+                    echo "<script>
+                            window.location.href = '../html/mec.php';
+                    </script>";
+
                 } ?>
 
+                <?php
+                if (isset($_POST['iButt'])) {
+                    $id = $_POST['ide'];
+
+                    $obj->deleteData(17);
+                }
+                ?>
             </div>
         </div>
+        <script src="https://kit.fontawesome.com/7bcd40cb83.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
