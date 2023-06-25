@@ -14,10 +14,10 @@
             <h3>Iniciar Sesión</h3>
             <h4>Mecanica Automotriz</h4>
             <fieldset>
-                <input placeholder="Correo Electronico" name="correo" type="email">
+                <input placeholder="Correo Electronico" name="email" type="email">
             </fieldset>
             <fieldset>
-                <input placeholder="Contraseña" name="contra" type="password">
+                <input placeholder="Contraseña" name="pass" type="password">
             </fieldset>
             <fieldset>
                 <button type="button"><a href="../html/index.php">Regresar</a></button>

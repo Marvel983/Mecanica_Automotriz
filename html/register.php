@@ -20,7 +20,7 @@
                 <input placeholder="Apellidos" name="apellido" type="text" required >
             </fieldset>
             <fieldset>
-                <input placeholder="Correo" name="correo" type="email" required>
+                <input placeholder="Correo" name="email" type="email" required>
             </fieldset>
             <fieldset>
                 <input placeholder="Genero" name="genero" type="text" required >
@@ -38,10 +38,11 @@
                 <input placeholder="Dui" name="dui" type="text" required>
             </fieldset>
             <fieldset>
-                <input placeholder="Fecha de nacimiento" name="nacimiento" type="date" required>
+                <label>Fecha de nacimiento</label>
+                <input placeholder="Fecha de nacimiento" name="fecha" type="date" required>
             </fieldset>
             <fieldset>
-                <input placeholder="Password" type="text" name="contra" required>
+                <input placeholder="Password" type="text" name="pass" required>
             </fieldset>                                                                                                                                                                 
             <fieldset>
                 <button name="register" type="submit" id="contact-submit" data-submit="...Sending">Registrarse</button>
