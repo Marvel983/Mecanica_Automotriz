@@ -10,6 +10,12 @@ instalaciones int not null,
 dirección varchar(100) not null
 );
 
+create table if not exists cargo(
+id int primary key auto_increment,
+descripcion varchar(250) not null
+);
+insert into cargo (id,descripcion) values ('1', 'administrador'), ('2', 'cliente');
+
 create table if not exists servicio(
 id_servicio int(11) auto_increment primary key ,
 tipo varchar(100) not null,
