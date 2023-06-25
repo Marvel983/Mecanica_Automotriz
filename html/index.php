@@ -17,9 +17,13 @@
                     <li><a href="../html/index.php" class="active">Index</a></li>
                     <li><a href="../html/reserva.php">Reserva</a></li>
                     <li><a href="../html/register_vehiculo.php">Vehiculo</a></li>
+<<<<<<< HEAD
                     <li><a href="../html/register.php">Registrarse</a></li>
                     <li><a href="../html/login.php">Iniciar Sesion</a></li>
 
+=======
+                    <li><a href="#">Reportes</a></li>
+>>>>>>> 5a62287358352e449d94492d434deca05cfa9a40
                 </ul>
             </nav>
         </header>
@@ -30,9 +34,13 @@
             </div>
             <img src="https://img.autosblogmexico.com/2019/11/27/hVoAV2LR/mecanico-1-7492.jpg" alt="Imagen de taller">
         </main>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ab sint, corrupti quasi rem id magni placeat cum libero unde fuga inventore facere sunt blanditiis minus atque pariatur animi ducimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ab sint, corrupti quasi rem id magni placeat cum libero unde fuga inventore facere sunt blanditiis minus atque pariatur animi ducimus.</p>
-
+        <footer>
+            <p>
+                ¡Bienvenido a nuestra página web de Mecánica Automotriz! Explora nuestros recursos y consejos para
+                mantener tu vehículo en óptimas condiciones. ¡Disfruta tu visita y no dudes en contactarnos si tienes
+                alguna pregunta!
+            </p>
+        </footer>
     </div>
     <footer>
         <h6>&copy; <span id="year"></span> Todos los derechos reservados 2023</h6>

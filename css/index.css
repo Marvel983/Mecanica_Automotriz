@@ -47,27 +47,32 @@ body{
 
 .menu li {
     list-style: none;
-  
 }
 
 .menu a {
-    color: #fff;
     text-decoration: none;
     padding: 10px 20px;
-    transition-property: all;
-    transition-duration: 0.15s;
-    transition-timing-function: linear;
+    transition: all .5s ease;
+    color: rgb(255, 43, 43);
+    display: grid;
 }
 
 .menu .active {
-    color: rgb(255, 43, 43);
+    color:#fff;;
    
 }
+
+.menu li a::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width .5s ease;
+}
   
-.menu li:hover a{
-    background-color: rgb(255, 43, 43);
-    color: #1d1e24;
-    border-radius: 3px;
+.menu li a:hover:after{
+    width: 100%;
+    cursor: pointer;
 }
 
 .main {
