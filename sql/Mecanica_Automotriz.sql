@@ -60,23 +60,25 @@ ON UPDATE CASCADE
 ON DELETE CASCADE
 );
 
+select * from cliente;
 create table if not exists cliente(
 id_cliente int(11) auto_increment primary key,
 nombre varchar(50) not null,
 apellido varchar(30) not null,
+correo varchar(100) NOT NULL,
 genero varchar(30) not null,
 dirección varchar(100) not null,
 teléfono varchar(25) not null,
 tarjeta varchar(25) not null,
-email varchar(30) not null,
-pass varchar(25) not null,
 dui varchar(25) not null,
 fecha_nac  date not null,
+contra varchar(50) NOT NULL
+/*
 vehículo int(11) not null,
 constraint foreign Key (vehículo) references vehículo(id_vehículo)
 ON UPDATE CASCADE
-ON DELETE CASCADE
-);
+ON DELETE CASCADE*/
+); 
 
 create table if not exists reserva(
 id_reserva int(11) auto_increment primary key,
