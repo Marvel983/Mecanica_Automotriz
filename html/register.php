@@ -12,7 +12,7 @@
     <div class="container">
         <form id="contact" action="" method="post">
             <h3>Registro</h3>
-            <h4>Mecanica Automotriz</h4>
+            <h4>Mecánica Automotriz</h4>
             <fieldset>
                 <input placeholder="Nombres" name="nombre" type="text" required >
             </fieldset>
@@ -26,13 +26,13 @@
                 <input placeholder="Genero" name="genero" type="text" required >
             </fieldset>
             <fieldset>
-                <input placeholder="Direccion" name="direccion" type="text" required>
+                <input placeholder="Dirección" name="dirección" type="text" required>
             </fieldset>
             <fieldset>
-                <input placeholder="Numero de telefono" name="telefono" type="tel" required>
+                <input placeholder="Numero de teléfono" name="teléfono" type="tel" required>
             </fieldset>
             <fieldset>
-                <input placeholder="Tarjeta de circulacion" name="tarjeta" type="text" required>
+                <input placeholder="Tarjeta de circulación" name="tarjeta" type="text" required>
             </fieldset>
             <fieldset>
                 <input placeholder="Dui" name="dui" type="text" required>
