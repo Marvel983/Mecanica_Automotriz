@@ -17,8 +17,9 @@
                     <li><a href="../html/index.php" class="active">Index</a></li>
                     <li><a href="../html/reserva.php">Reserva</a></li>
                     <li><a href="../html/register_vehiculo.php">Vehiculo</a></li>
-                    <li><a href="#">Reportes</a></li>
+                    <li><a href="../html/register.php">Registrarse</a></li>
                     <li><a href="../html/login.php">Iniciar Sesion</a></li>
+
                 </ul>
             </nav>
         </header>

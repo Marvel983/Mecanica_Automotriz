@@ -29,7 +29,7 @@
                 <input placeholder="Numero de telefono" name="telefono" type="tel" required>
             </fieldset>
             <fieldset>
-                <input placeholder="Tarjeta de circulacion" name="tarjeta" type="number" required autofocus>
+                <input placeholder="Tarjeta de circulacion" name="tarjeta" type="text" required autofocus>
             </fieldset>
             <fieldset>
                 <input placeholder="Correo" name="correo" type="email" required>
@@ -38,10 +38,10 @@
                 <input placeholder="Dui" name="dui" type="text" required autofocus>
             </fieldset>
             <fieldset>
-                <input placeholder="Fecha de nacimiento" name="nacimiento" type="number" required autofocus>
+                <input placeholder="Fecha de nacimiento" name="nacimiento" type="text" required autofocus>
             </fieldset>
             <fieldset>
-                <input placeholder="Password" type="password" tabindex="1" required autofocus>
+                <input placeholder="Password" name="contra" type="password" tabindex="1" required autofocus>
             </fieldset>                                                                                                                                                                 
             <fieldset>
                 <button name="register" type="submit" id="contact-submit" data-submit="...Sending">Registrarse</button>
