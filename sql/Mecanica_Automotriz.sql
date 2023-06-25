@@ -73,7 +73,7 @@ pass varchar(25) not null,
 dui varchar(25) not null,
 fecha_nac  date not null,
 vehículo int(11) not null,
-foreign Key (vehículo) references vehículo(id_vehículo)
+constraint foreign Key (vehículo) references vehículo(id_vehículo)
 ON UPDATE CASCADE
 ON DELETE CASCADE
 );
