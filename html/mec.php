@@ -4,7 +4,7 @@
     require_once('../php/methods.php');
     
     $obj = new métodosCrud();
-    $sql = "SELECT * FROM mecanico";
+    $sql = "SELECT * FROM mecánico";
     $datos = $obj->showData($sql);
 
 ?>

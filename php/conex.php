@@ -5,7 +5,7 @@ class conexión
     private $host = 'localhost';
     private $user = 'root';
     private $pass = '';
-    private $db = 'mecanica_automotriz';
+    private $db = 'mecánica_automotriz';
 
     public function conectar()
     {
