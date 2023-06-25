@@ -1,12 +1,11 @@
 <?php
 
-    require_once('../php/conex.php');
-    require_once('../php/methods.php');
-    
-    $obj = new métodosCrud();
-    $sql = "SELECT * FROM mecánico";
-    $datos = $obj->showData($sql);
+require_once('../php/conex.php');
+require_once('../php/methods.php');
 
+$obj = new métodosCrud();
+$sql = "SELECT * FROM mecánico";
+$datos = $obj->showData($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,15 +30,17 @@
         <div id="div1">
             <h4>Mecánicos</h4>
             <?php
-                foreach ($datos as $key){
-                
-            ?>
-                <div class="info">
-                    <?php echo $key['nombre']; ?>
-                </div>
-            <?php
-
+            if ($datos) {
+                foreach ($datos as $key) {
+                    ?>
+                    <div class="info">
+                        <?php echo $key['nombre']; ?>
+                    </div>
+                <?php
                 }
+            }else{
+                echo "No se encontraron datos en la Base de datos";
+            }
 
             ?>
         </div>
