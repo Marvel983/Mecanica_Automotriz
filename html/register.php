@@ -45,7 +45,7 @@
                 <input placeholder="Password" type="text" name="pass" required>
             </fieldset>                                                                                                                                                                 
             <fieldset>
-                <button name="register" type="submit" id="contact-submit" data-submit="...Sending">Registrarse</button>
+                <button value="register" name="register" type="submit" id="contact-submit" data-submit="...Sending">Registrarse</button>
             </fieldset>
         </form>
         <?php

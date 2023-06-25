@@ -16,13 +16,14 @@ if (isset($_POST['register'])) {
         $telefono = trim($_POST['telefono']);
         $tarjeta = trim($_POST['tarjeta']);
         $dui = trim($_POST['dui']);
-        $fecha = trim($_POST['fecha']);
-        $pass = md5($_POST['pass']);
-
-        $consulta = "INSERT INTO cliente(nombre,apellido,email,genero,direccion,telefono,tarjeta,dui,fecha_nac,pass,id_cargo)
-            VALUES ('$nombre','$apellido','$email','$genero','$direccion','$telefono','$tarjeta','$dui','$fecha','$pass',2)";
+        $nacimiento = trim($_POST['nacimiento']);
+        $contra = md5($_POST['contra']);
+        // vehiculo en lugar de id_cargo en tabla
+        $consulta = "INSERT INTO cliente (nombre, apellido, correo, genero, direccion, telefono, tarjeta, dui, fecha_nac, contra)
+            VALUES ('$nombre','$apellido','$correo','$genero','$direccion','$telefono','$tarjeta','$dui','$nacimiento','$contra')";
 
         $resultado = mysqli_query($connex, $consulta);
+
         if ($resultado) {
 ?>
             <script>
