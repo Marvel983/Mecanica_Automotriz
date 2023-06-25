@@ -18,10 +18,9 @@ if (isset($_POST['register'])) {
         $dui = trim($_POST['dui']);
         $nacimiento = trim($_POST['nacimiento']);
         $contra = md5($_POST['contra']);
-        // vehiculo en lugar de id_cargo en tabla
-        //Verificar bien eso por el momento se elimina el vehiculo
-        $consulta = "INSERT INTO cliente (nombre, apellido, correo, genero, dirección, teléfono, tarjeta, dui, fecha_nac, contra)
-            VALUES ('$nombre','$apellido','$correo','$genero','$direccion','$telefono','$tarjeta','$dui','$nacimiento','$contra')";
+        //Verificar bien eso por el momento se elimina el vehículo
+        $consulta = "INSERT INTO cliente (nombre, apellido, correo, genero, dirección, teléfono, tarjeta, dui, fecha_nac, contra, cargo)
+            VALUES ('$nombre','$apellido','$correo','$genero','$dirección','$teléfono','$tarjeta','$dui','$nacimiento','$contra', 2)";
 
         $resultado = mysqli_query($connex, $consulta);
 

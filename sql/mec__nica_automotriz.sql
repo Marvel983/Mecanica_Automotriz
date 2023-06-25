@@ -27,10 +27,10 @@ SET time_zone = "+00:00";
 -- Table structure for table `cargo`
 --
 
-CREATE TABLE `cargo` (
-  `id_cargo` int(11) NOT NULL,
-  `descripción` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+-- CREATE TABLE `cargo` (
+--  `id_cargo` int(11) NOT NULL,
+-- `descripción` varchar(250) NOT NULL
+-- ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -49,17 +49,18 @@ CREATE TABLE `cliente` (
   `tarjeta` varchar(50) NOT NULL,
   `dui` int(50) NOT NULL,
   `fecha_nac` date NOT NULL,
-  `contra` varchar(50) NOT NULL
+  `contra` varchar(50) NOT NULL,
+  `id_cargo` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cliente`
 --
 
-INSERT INTO `cliente` (`id_cliente`, `nombre`, `apellido`, `correo`, `genero`, `direccion`, `telefono`, `tarjeta`, `dui`, `fecha_nac`, `contra`) VALUES
-(1, 'dede', 'deded', 'deded@gmail.com', 'ncnwd', 'huhuh', 'uhuhu', 'uuhiuiuhiu', 0, '2300-05-10', '29b3435265c2580d883a5d831680536a'),
-(2, 'Ricardo Daniel', 'Guevara Avelar', 'RDGuevaraA@gmail.com', 'Prefiero no decirlo', 'Escalon', '78451236', 'blablabla', 0, '3033-07-20', 'f688ae26e9cfa3ba6235477831d5122e'),
-(3, 'w', 'w', 'w@gaaaaa', 'q', 'q', 'q', 'q', 0, '3333-02-22', 'e54a37b1124ecdf5b1a19edaa29a682a');
+INSERT INTO `cliente` (`id_cliente`, `nombre`, `apellido`, `correo`, `genero`, `direccion`, `telefono`, `tarjeta`, `dui`, `fecha_nac`, `contra`, `id_cargo`) VALUES
+(1, 'dede', 'deded', 'deded@gmail.com', 'ncnwd', 'huhuh', 'uhuhu', 'uuhiuiuhiu', 0, '2300-05-10', '29b3435265c2580d883a5d831680536a', 2),
+(2, 'Ricardo Daniel', 'Guevara Avelar', 'RDGuevaraA@gmail.com', 'Prefiero no decirlo', 'Escalon', '78451236', 'blablabla', 0, '3033-07-20', 'f688ae26e9cfa3ba6235477831d5122e', 2),
+(3, 'w', 'w', 'w@gaaaaa', 'q', 'q', 'q', 'q', 0, '3333-02-22', 'e54a37b1124ecdf5b1a19edaa29a682a', 2);
 
 -- --------------------------------------------------------
 
