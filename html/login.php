@@ -10,7 +10,7 @@
 
 <body>
     <div class="container">
-        <form id="contact" action="" method="POST">
+    <form id="contact" action="" method="POST">
             <h3>Iniciar Sesión</h3>
             <h4>Mecanica Automotriz</h4>
             <fieldset>

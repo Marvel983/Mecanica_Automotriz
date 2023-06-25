@@ -38,6 +38,7 @@
                 <input placeholder="Dui" name="dui" type="text" required>
             </fieldset>
             <fieldset>
+                <label>Fecha de nacimiento</label>
                 <input placeholder="Fecha de nacimiento" name="nacimiento" type="date" required>
             </fieldset>
             <fieldset>

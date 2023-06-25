@@ -6,7 +6,7 @@ if (isset($_POST['register'])) {
         strlen($_POST['nombre']) >= 1 && strlen($_POST['apellido']) >= 1 && strlen($_POST['correo']) >= 1 &&
         strlen($_POST['genero']) >= 1 && strlen($_POST['dirección']) >= 1 && strlen($_POST['teléfono']) >= 1 &&
         strlen($_POST['tarjeta']) >= 1 && strlen($_POST['dui']) >= 1 && strlen($_POST['nacimiento']) >= 1 &&
-        md5($_POST['contra']) >= 1
+        strlen($_POST['contra']) >= 1
     ) {
         $nombre = trim($_POST['nombre']);
         $apellido = trim($_POST['apellido']);
@@ -18,8 +18,12 @@ if (isset($_POST['register'])) {
         $dui = trim($_POST['dui']);
         $nacimiento = trim($_POST['nacimiento']);
         $contra = md5($_POST['contra']);
-        $consulta = "INSERT INTO cliente (nombre, apellido, correo, genero, dirección, teléfono, tarjeta, dui, fechaNacido, contra, id_cargo)
-            VALUES ('$nombre','$apellido','$correo','$genero','$dirección','$teléfono','$tarjeta','$dui','$nacimiento','$contra', 2)";
+        // vehiculo en lugar de id_cargo en tabla
+        //Verificar bien eso por el momento se elimina el vehiculo
+        $consulta = "INSERT INTO cliente (nombre, apellido, correo, genero, dirección, teléfono, tarjeta, dui, fecha_nac, contra)
+            VALUES ('$nombre','$apellido','$correo','$genero','$direccion','$telefono','$tarjeta','$dui','$nacimiento','$contra')";
+
+        $resultado = mysqli_query($connex, $consulta);
 
         if ($resultado) {
 ?>
