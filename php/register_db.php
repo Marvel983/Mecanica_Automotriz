@@ -19,10 +19,7 @@ if (isset($_POST['register'])) {
         $nacimiento = trim($_POST['nacimiento']);
         $contra = md5($_POST['contra']);
 
-        $consulta = "INSERT INTO cliente(nombre,apellido,correo,genero,dirección,teléfono,tarjeta,dui,fecha_nac,contra,id_cargo)
-            VALUES ('$nombre','$apellido','$correo','$genero','$dirección','$teléfono','$tarjeta','$dui','$nacimiento','$contra',2)";
 
-        $resultado = mysqli_query($connex,$consulta);
         if ($resultado) {
 ?>
             <script>
