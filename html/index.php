@@ -30,7 +30,11 @@
             <img src="https://img.autosblogmexico.com/2019/11/27/hVoAV2LR/mecanico-1-7492.jpg" alt="Imagen de taller">
         </main>
         <footer>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ab sint, corrupti quasi rem id magni placeat cum libero unde fuga inventore facere sunt blanditiis minus atque pariatur animi ducimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ab sint, corrupti quasi rem id magni placeat cum libero unde fuga inventore facere sunt blanditiis minus atque pariatur animi ducimus.</p>
+            <p>
+                ¡Bienvenido a nuestra página web de Mecánica Automotriz! Explora nuestros recursos y consejos para
+                mantener tu vehículo en óptimas condiciones. ¡Disfruta tu visita y no dudes en contactarnos si tienes
+                alguna pregunta!
+            </p>
         </footer>
     </div>
 </body>
