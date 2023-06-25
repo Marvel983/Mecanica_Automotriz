@@ -4,47 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Vehiculo</title>
+    <title>Registro vehículo</title>
     <link rel="stylesheet" href="../css/register_vehiculo.css">
+    <link rel="icon" href="../src/icon_auto.png" type="image/x-icon">
 </head>
 
 <body>
     <div class="container">
         <form id="contact" action="" method="post">
-            <h3>Registro Vehiculo</h3>
+            <h3>Registro del vehículo</h3>
             <h4>Mecanica Automotriz</h4>
             <fieldset>
-                <input placeholder="Modelo" name="modelo" type="text" required autofocus>
+                <label>Modelo del vehículo</label>
+                <input name="modelo" type="text" required autofocus>
             </fieldset>
             <fieldset>
-                <input placeholder="Tipo de vehiculo" name="tipo" type="text" required autofocus>
+                <label>Tipo de vehiculo</label>
+                <input name="tipo" type="text" required autofocus>
             </fieldset>
             <fieldset>
-                <input placeholder="Placa" name="placa" type="text" required autofocus>
+                <label>Placa del vehículo</label>
+                <input name="placa" type="text" required autofocus>
             </fieldset>
             <fieldset>
-                <input placeholder="Dominio del vehiculo" name="dominio" type="text" required autofocus>
+                <label>Dominio del vehículo</label>
+                <input name="dominio" type="text" required autofocus>
             </fieldset>
             <fieldset>
-                <input placeholder="Color del vehiculo" name="color" type="text" required>
+                <label>Color del vehículo</label>
+                <input name="color" type="text" required>
             </fieldset>
             <fieldset>
-                <input placeholder="Número de motor" name="motor" type="text" required autofocus>
+                <label>Número de motor</label>
+                <input name="motor" type="text" required autofocus>
             </fieldset>
             <fieldset>
-                <input placeholder="Clase del vehiculo" name="clase" type="text" required>
+                <label>Clase del vehiculo</label>
+                <input name="clase" type="text" required>
             </fieldset>
             <fieldset>
-                <input placeholder="Marca del vehiculo" name="marca" type="text" required autofocus>
+                <label>Marca del vehículo</label>
+                <input  name="marca" type="text" required autofocus>
             </fieldset>
             <fieldset>
-                <input placeholder="Año del vehiculo" name="fecha" type="date" required autofocus>
-            </fieldset>  
+                <label>Año del vehículo</label>
+                <input name="fecha" type="date" required autofocus>
+            </fieldset>
             <fieldset>
                 <button type="button"><a href="../html/index.php">Regresar</a></button>
             </fieldset>
             <fieldset>
-                <button name="register_vehiculo" type="submit" id="contact-submit" data-submit="...Sending">Registrar</button>
+                <button name="register_vehiculo" type="submit" id="contact-submit" data-submit="...Sending">Registrar vehículo</button>
             </fieldset>
         </form>
         <?php

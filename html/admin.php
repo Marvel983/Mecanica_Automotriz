@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <link rel="stylesheet" href="../css/mec.css">
+    <link rel="icon" href="../src/icon_auto.png" type="image/x-icon">
 </head>
 
 <body>
