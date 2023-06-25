@@ -1,5 +1,5 @@
 <?php
-$connex = new mysqli("localhost", "root", "", "mecanica_automotriz");
+$connex = new mysqli("localhost", "root", "", "mecánica_automotriz");
 
 if (isset($_POST['register'])) {
     if (
@@ -18,11 +18,12 @@ if (isset($_POST['register'])) {
         $dui = trim($_POST['dui']);
         $nacimiento = trim($_POST['nacimiento']);
         $contra = md5($_POST['contra']);
+        // vehiculo en lugar de id_cargo en tabla
+        $consulta = "INSERT INTO cliente (nombre, apellido, correo, genero, direccion, telefono, tarjeta, dui, fecha_nac, contra)
+            VALUES ('$nombre','$apellido','$correo','$genero','$direccion','$telefono','$tarjeta','$dui','$nacimiento','$contra')";
 
-        $consulta = "INSERT INTO cliente(nombre,apellido,correo,genero,direccion,telefono,tarjeta,dui,fecha_nac,contra,id_cargo)
-            VALUES ('$nombre','$apellido','$correo','$genero','$direccion','$telefono','$tarjeta','$dui','$nacimiento','$contra',2)";
+        $resultado = mysqli_query($connex, $consulta);
 
-        $resultado = mysqli_query($connex,$consulta);
         if ($resultado) {
 ?>
             <script>
