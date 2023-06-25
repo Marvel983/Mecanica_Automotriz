@@ -12,38 +12,47 @@
     <div class="container">
         <form id="contact" action="" method="post">
             <h3>Registro</h3>
-            <h4>Mecánica Automotriz</h4>
+            <h4>Mecanica Automotriz</h4>
             <fieldset>
-                <input placeholder="Nombres" name="nombre" type="text" required >
+                <label>Nombres</label>
+                <input name="nombre" type="text" required>
             </fieldset>
             <fieldset>
-                <input placeholder="Apellidos" name="apellido" type="text" required >
+                <label>Apellidos</label>
+                <input name="apellido" type="text" required>
             </fieldset>
             <fieldset>
-                <input placeholder="Correo" name="correo" type="email" required>
+                <label>Correo Electronico</label>
+                <input name="correo" type="email" required>
             </fieldset>
             <fieldset>
-                <input placeholder="Genero" name="genero" type="text" required >
+                <label>Genero</label>
+                <input name="genero" type="text" required>
             </fieldset>
             <fieldset>
-                <input placeholder="Dirección" name="dirección" type="text" required>
+                <label>Dirección</label>
+                <input name="direccion" type="text" required>
             </fieldset>
             <fieldset>
-                <input placeholder="Numero de teléfono" name="teléfono" type="tel" required>
+                <label>Número de teléfono</label>
+                <input name="telefono" type="tel" required>
             </fieldset>
             <fieldset>
-                <input placeholder="Tarjeta de circulación" name="tarjeta" type="text" required>
+                <label>Tarjeta de circulacion</label>
+                <input name="tarjeta" type="text" required>
             </fieldset>
             <fieldset>
-                <input placeholder="Dui" name="dui" type="text" required>
+                <label>Dui</label>
+                <input name="dui" type="text" required>
             </fieldset>
             <fieldset>
                 <label>Fecha de nacimiento</label>
-                <input placeholder="Fecha de nacimiento" name="nacimiento" type="date" required>
+                <input name="nacimiento" type="date" required>
             </fieldset>
             <fieldset>
-                <input placeholder="Password" type="text" name="contra" required>
-            </fieldset>                                                                                                                                                                 
+                <label>Contraseña</label>
+                <input type="password" name="contra" required>
+            </fieldset>
             <fieldset>
                 <button value="register" name="register" type="submit" id="contact-submit" data-submit="...Sending">Registrarse</button>
             </fieldset>

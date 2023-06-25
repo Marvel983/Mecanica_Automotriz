@@ -2,7 +2,6 @@
 
 session_start();
 
-
 include('../php/conex.php');
 
 if (isset($_POST['submit'])) {
@@ -10,7 +9,6 @@ if (isset($_POST['submit'])) {
 
         $correo = $_POST['correo'];
         $contra = $_POST['contra'];
-
 
 
         // IMPORTANTE.........................................................................
@@ -60,6 +58,3 @@ if (isset($_POST['submit'])) {
         ';
     }
 }
-
-
-
