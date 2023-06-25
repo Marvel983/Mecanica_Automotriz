@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Login</title>
     <link rel="stylesheet" href="../css/register.css">
 </head>
 
@@ -20,6 +20,9 @@
                 <input placeholder="Apellidos" name="apellido" type="text" required autofocus>
             </fieldset>
             <fieldset>
+                <input placeholder="Correo" name="correo" type="email" required>
+            </fieldset>
+            <fieldset>
                 <input placeholder="Genero" name="genero" type="text" required autofocus>
             </fieldset>
             <fieldset>
@@ -31,20 +34,18 @@
             <fieldset>
                 <input placeholder="Tarjeta de circulacion" name="tarjeta" type="number" required autofocus>
             </fieldset>
-            <fieldset>
-                <input placeholder="Correo" name="correo" type="email" required>
-            </fieldset>
+
             <fieldset>
                 <input placeholder="Dui" name="dui" type="text" required autofocus>
             </fieldset>
             <fieldset>
-                <input placeholder="Fecha de nacimiento" name="nacimiento" type="number" required autofocus>
+                <input placeholder="Fecha de nacimiento" name="nacimiento" type="date" required autofocus>
             </fieldset>
             <fieldset>
-                <input placeholder="Password" type="password" tabindex="1" required autofocus>
+                <input placeholder="Password" type="password" name="contra"  tabindex="1" required autofocus>
             </fieldset>                                                                                                                                                                 
             <fieldset>
-                <button name="register" type="submit" id="contact-submit" data-submit="...Sending">Registrarse</button>
+                <button name="register" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
             </fieldset>
         </form>
         <?php
