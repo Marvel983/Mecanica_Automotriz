@@ -1,9 +1,12 @@
 <?php
-
+/**
+ * Contiene la conexión a la Base de datos
+ */
 class conexión
 {
 }
 
+<<<<<<< HEAD
     $connex=mysqli_connect("localhost","root","","mecánica_automotriz");
 
     // private $host = 'localhost';
@@ -22,6 +25,12 @@ class conexión
 
     //     return $connection;
     // }
+=======
+    /**
+     * Recibe datos de la base de datos y conecta con mysqli_connect();
+     */
+    public function conectar()
+>>>>>>> c1df32c0f100f04c2dddf77268cdcc78e58c6172
     {
 }
 
