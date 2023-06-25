@@ -2,7 +2,7 @@
 
 session_start();
 
-include('../php/conex.php');
+$connex = new mysqli("localhost", "root", "", "mecánica_automotriz");
 
 if (isset($_POST['submit'])) {
     if (strlen($_POST['correo']) >= 1 && strlen($_POST['contra']) >= 1) {
