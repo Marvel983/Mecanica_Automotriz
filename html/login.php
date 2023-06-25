@@ -10,7 +10,7 @@
 
 <body>
     <div class="container">
-        <form id="contact" action="" method="get">
+        <form id="contact" action="" method="POST">
             <h3>Iniciar Sesión</h3>
             <h4>Mecanica Automotriz</h4>
             <fieldset>
@@ -23,7 +23,7 @@
                 <button type="button"><a href="../html/index.php">Regresar</a></button>
             </fieldset>
             <fieldset>
-                <button name="btn_iniciar" type="submit">Iniciar Sesión</button>
+                <button name="submit" type="submit">Iniciar Sesión</button>
             </fieldset>
         </form>
         <?php

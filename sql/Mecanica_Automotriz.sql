@@ -10,6 +10,12 @@ instalaciones int not null,
 direccion varchar(100) not null
 );
 
+create table if not exists cargo(
+id int primary key auto_increment,
+descripcion varchar(250) not null
+);
+insert into cargo (id,descripcion) values ('1', 'administrador'), ('2', 'cliente');
+
 create table if not exists servicio(
 id_servicio int primary key  auto_increment,
 tipo varchar(100) not null,
@@ -18,6 +24,7 @@ descripcion varchar(100) not null
 id_taller int,
 foreign Key (id_taller) references taller(id_taller)*/
 );
+
 
 create table if not exists mecanico(
 id_mecanico int primary key  auto_increment,
@@ -29,7 +36,10 @@ telefono int,
 direccion varchar(50) not null,
 fechanac date,
 genero varchar(15) not null,
-remuneracion varchar(15) not null
+remuneracion varchar(15) not null,
+
+id_cargo int,
+foreign Key (id_cargo) references cargo(id)
 /*
 id_taller int,
 foreign Key (id_taller) references taller(id_taller)*/
@@ -62,8 +72,12 @@ telefono int not null,
 tarjeta int not null,
 correo varchar(30) not null,
 dui varchar(30) not null,
-nacimiento  date not null,
-contra varchar(30) not null
+fecha_nac  date not null,
+contra varchar(30) not null,
+
+id_cargo int,
+foreign Key (id_cargo) references cargo(id)
+
 /*
 id_vehiculo int,
 foreign Key (id_vehiculo) references vehiculo(id_vehiculo)*/
@@ -91,4 +105,6 @@ foreign Key (id_mecanico) references mecanico(id_mecanico),
 id_cliente int,
 foreign Key (id_cliente) references cliente(id_cliente)*/
 );
+
+
 	

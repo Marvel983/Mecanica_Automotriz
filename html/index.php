@@ -17,13 +17,9 @@
                     <li><a href="../html/index.php" class="active">Index</a></li>
                     <li><a href="../html/reserva.php">Reserva</a></li>
                     <li><a href="../html/register_vehiculo.php">Vehiculo</a></li>
-<<<<<<< HEAD
                     <li><a href="../html/register.php">Registrarse</a></li>
                     <li><a href="../html/login.php">Iniciar Sesion</a></li>
 
-=======
-                    <li><a href="#">Reportes</a></li>
->>>>>>> 5a62287358352e449d94492d434deca05cfa9a40
                 </ul>
             </nav>
         </header>
