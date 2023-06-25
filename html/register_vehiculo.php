@@ -38,7 +38,7 @@
                 <input placeholder="Marca del vehiculo" name="marca" type="text" required autofocus>
             </fieldset>
             <fieldset>
-                <input placeholder="Año del vehiculo" name="fecha" type="text" required autofocus>
+                <input placeholder="Año del vehiculo" name="fecha" type="date" required autofocus>
             </fieldset>  
             <fieldset>
                 <button type="button"><a href="../html/index.php">Regresar</a></button>

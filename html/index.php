@@ -37,6 +37,14 @@
             </p>
         </footer>
     </div>
+    <footer>
+        <h6>&copy; <span id="year"></span> Todos los derechos reservados 2023</h6>
+        <script>
+            let year = document.getElementById('year');
+            let y = new Date().getFullYear();
+            year.innerHTML = y;
+        </script>
+    </footer>
 </body>
 
 </html>
