@@ -20,7 +20,8 @@
             if ($resultado) {
                 ?>
                     <script>
-                        alert("Lo inscribiste correctamente");
+                        alert("Lo registraste correctamente");
+                        window.location.href='../html/index.php';
                     </script>
                 <?php
             } else {

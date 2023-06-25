@@ -12,13 +12,15 @@
             $correo = trim($_POST['correo']);
             $dui = trim($_POST['dui']);
             $nacimiento = trim($_POST['correo']);
-            $consulta = "INSERT INTO cliente (nombre,apellido,genero,direccion, telefono, tarjeta,correo,dui,fecha_nac) VALUES ('$nombre','$apellido','$genero','$direccion','$telefono','$tarjeta','$correo','$dui','$nacimiento')";
+            $consulta = "INSERT INTO cliente (nombre,apellido,genero,direccion, telefono, tarjeta,correo,dui,fecha_nac)
+            VALUES ('$nombre','$apellido','$genero','$direccion','$telefono','$tarjeta','$correo','$dui','$nacimiento')";
 
             $resultado = mysqli_query($connex,$consulta);
             if ($resultado) {
                 ?>
                     <script>
-                        alert("Te inscribiste correctamente");
+                        alert("Te registraste correctamente");
+                        window.location.href='../html/index.php';
                     </script>
                 <?php
             } else {

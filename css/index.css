@@ -93,6 +93,11 @@ h1 {
     color:rgb(255, 43, 43)
 }
 
+p{
+    margin-left: 22%;
+    margin-right: 22%; 
+}
+
 footer {
     background: linear-gradient(to top, #303138, #1d1e24);
     display: flex;
@@ -105,9 +110,11 @@ footer {
 
 }
 
-footer p {
+footer h6 {
     margin-left: 22%;
     margin-right: 22%;
+    color: #fff;
+    font-size: medium;
 }
 
 @media screen and (max-width: 760px){

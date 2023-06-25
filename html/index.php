@@ -29,10 +29,18 @@
             </div>
             <img src="https://img.autosblogmexico.com/2019/11/27/hVoAV2LR/mecanico-1-7492.jpg" alt="Imagen de taller">
         </main>
-        <footer>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ab sint, corrupti quasi rem id magni placeat cum libero unde fuga inventore facere sunt blanditiis minus atque pariatur animi ducimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ab sint, corrupti quasi rem id magni placeat cum libero unde fuga inventore facere sunt blanditiis minus atque pariatur animi ducimus.</p>
-        </footer>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ab sint, corrupti quasi rem id magni placeat cum libero unde fuga inventore facere sunt blanditiis minus atque pariatur animi ducimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ab sint, corrupti quasi rem id magni placeat cum libero unde fuga inventore facere sunt blanditiis minus atque pariatur animi ducimus.</p>
+
     </div>
+    <footer>
+        <h6>&copy; <span id="year"></span> Todos los derechos reservados 2023</h6>
+        <script>
+            let year = document.getElementById('year');
+            let y = new Date().getFullYear();
+            year.innerHTML = y;
+        </script>
+    </footer>
 </body>
 
 </html>

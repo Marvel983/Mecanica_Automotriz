@@ -45,13 +45,13 @@ color varchar(15) not null,
 num_motor varchar(15) not null,
 clase varchar(15) not null,
 marca varchar(15) not null,
-fecha date,
+fecha date not null,
 
 
 id_mecanico int,
 foreign Key (id_mecanico) references mecanico(id_mecanico)
 );
-select * from vehiculo;
+select * from vehiclienteculo;
 
 
 create table if not exists cliente(
