@@ -18,7 +18,8 @@ if (isset($_POST['register'])) {
         $dui = trim($_POST['dui']);
         $nacimiento = trim($_POST['nacimiento']);
         $contra = md5($_POST['contra']);
-
+        $consulta = "INSERT INTO cliente (nombre, apellido, correo, genero, dirección, teléfono, tarjeta, dui, fechaNacido, contra, id_cargo)
+            VALUES ('$nombre','$apellido','$correo','$genero','$dirección','$teléfono','$tarjeta','$dui','$nacimiento','$contra', 2)";
 
         if ($resultado) {
 ?>

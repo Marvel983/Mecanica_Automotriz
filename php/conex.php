@@ -1,28 +1,25 @@
 <?php
-
+/**
+ * Contiene la conexión a la base de datos
+ */
 class conexión
 {
-}
+    private $host = 'localhost';
+    private $user = 'root';
+    private $pass = '';
+    private $db = 'mecánica_automotriz';
 
-    $connex=mysqli_connect("localhost","root","","mecánica_automotriz");
-
-    // private $host = 'localhost';
-    // private $user = 'root';
-    // private $pass = '';
-    // private $db = 'mecánica_automotriz';
-
-    // public function conectar()
-    // {
-    //     $connection = mysqli_connect(
-    //         $this->host,
-    //         $this->user,
-    //         $this->pass,
-    //         $this->db
-    //     );
-
-    //     return $connection;
-    // }
+    public function conectar()
     {
+        $connection = mysqli_connect(
+            $this->host,
+            $this->user,
+            $this->pass,
+            $this->db
+        );
+
+        return $connection;
+    }
 }
 
 ?>
