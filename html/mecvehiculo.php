@@ -1,10 +1,11 @@
 <?php
-
+session_start();
 require_once('../php/conex.php');
 require_once('../php/methods.php');
 
+$id = $_SESSION['meca'][0];
 $obj = new métodosCrud();
-$sql = "SELECT * FROM vehículo";
+$sql = "SELECT * FROM `vehículo-mec` where mecanico = $id";
 $datos = $obj->showDataMecvehi($sql);
 
 ?>
@@ -25,7 +26,8 @@ $datos = $obj->showDataMecvehi($sql);
         <nav class="navbar">
             <ul class="menu">
                 <li><a href="../html/index_mecanico.php">Index</a></li>
-                <li><a href="../html/mecvehiculo.php" class="active">Mecánicos</a></li>
+                <li><a href="../html/mecvehiculo.php?id=<?php echo $_SESSION['meca'][0]; ?>"
+                        class="active">Mecánicos</a></li>
                 <li><a href="../php/logOut.php"><i class="fa-solid fa-right-from-bracket"> Salir</i></a></li>
             </ul>
         </nav>
@@ -35,7 +37,7 @@ $datos = $obj->showDataMecvehi($sql);
             <h2>Mecánicos</h2>
             <table>
                 <thead>
-                <td>Id</td>
+                    <td>ID</td>
                     <td>modelo</td>
                     <td>tipo</td>
                     <td>placa</td>
@@ -45,46 +47,56 @@ $datos = $obj->showDataMecvehi($sql);
                     <td>clase</td>
                     <td>marca</td>
                     <td>fecha</td>
+                    <td>Borrar</td>
+                    <td>Reporte</td>
                 </thead>
                 <?php
                 if ($datos) {
                     foreach ($datos as $key) {
-                ?>
+                        ?>
                         <tr>
-                        <td>
-                                <?php echo $row['modelo']; ?>
+                            <td>
+                                <?php echo $key['id_vehículo']; ?>
                             </td>
                             <td>
-                                <?php echo $row['tipo']; ?>
+                                <?php echo $key['modelo']; ?>
                             </td>
                             <td>
-                                <?php echo $row['placa']; ?>
+                                <?php echo $key['tipo']; ?>
                             </td>
                             <td>
-                                <?php echo $row['dominio']; ?>
+                                <?php echo $key['placa']; ?>
                             </td>
                             <td>
-                                <?php echo $row['color']; ?>
+                                <?php echo $key['dominio']; ?>
                             </td>
                             <td>
-                                <?php echo $row['num_motor']; ?>
+                                <?php echo $key['color']; ?>
                             </td>
                             <td>
-                                <?php echo $row['clase']; ?>
+                                <?php echo $key['num_motor']; ?>
                             </td>
                             <td>
-                                <?php echo $row['marca']; ?>
+                                <?php echo $key['clase']; ?>
                             </td>
                             <td>
-                                <?php echo $row['fecha']; ?>
+                                <?php echo $key['marca']; ?>
+                            </td>
+                            <td>
+                                <?php echo $key['fecha']; ?>
                             </td>
                             <td>
                                 <a id="iButt" name="iButt" onclick="del(<?php echo $key['id_vehículo']; ?>)">
-                                        <i class="fa-solid fa-trash"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a id="iButt" name="iButt" onclick="rep(<?php echo $key['id_vehículo']; ?>)">
+                                    <i class="fa-solid fa-paperclip"></i>
                                 </a>
                             </td>
                         </tr>
-                <?php
+                        <?php
                     }
                 } else {
                     echo "<h4>No se encontraron datos en la Base de datos</h4>";
@@ -123,7 +135,7 @@ $datos = $obj->showDataMecvehi($sql);
                     <fieldset>
                         <input placeholder="fecha" name="fecha" type="text" required>
                     </fieldset>
-                  
+
                     <fieldset>
                         <button name="mecvehiculo" type="submit" id="contact-submit" data-submit="...Sending">Agregar
                             Mecánico</button>
@@ -150,7 +162,8 @@ $datos = $obj->showDataMecvehi($sql);
                         $motor,
                         $clase,
                         $marca,
-                        $fecha
+                        $fecha,
+                        $id
                     );
 
                     $obj->insertDataMecvehi($arr);
@@ -166,7 +179,7 @@ $datos = $obj->showDataMecvehi($sql);
         <script src="../js/j_query.js"></script>
         <script src="../js/alertify.js"></script>
         <script>
-            function deleteDataMecvehi(id) {
+            function del(id) {
                 alertify.confirm("¿Desea eliminar el mecánico?",
                     function () {
                         window.location = "../php/delmecvehiculo.php?id=" + id;
@@ -176,6 +189,17 @@ $datos = $obj->showDataMecvehi($sql);
                         alertify.error('Cancelado');
                     });
             }
+
+            function rep(id) {
+                alertify.confirm("¿Desea generar un reporte para este auto?",
+                    function () {
+                        window.location = "../html/report.php?id=" + id;
+                    },
+                    function () {
+                        alertify.error('Cancelado');
+                    });
+            }
+
         </script>
 </body>
 

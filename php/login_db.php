@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 $connex = new mysqli("localhost", "root", "", "mecánica_automotriz");
 
 if (isset($_POST['submit'])) {
@@ -12,6 +10,7 @@ if (isset($_POST['submit'])) {
         $validar_login = mysqli_query($connex, "SELECT * FROM cliente WHERE correo='$correo' and contra='$contra'");
         if (mysqli_num_rows($validar_login) > 0) {
             $data = $validar_login->fetch_assoc();
+            session_start();
             $_SESSION['user'] = array();
             $_SESSION['user'][0] = $data['id_cliente'];
             $_SESSION['user'][1] = $data['nombre'];
@@ -24,6 +23,7 @@ if (isset($_POST['submit'])) {
         $validar_meca = mysqli_query($connex, "SELECT * FROM mecánico WHERE correo='$correo' and contra='$contra'");
         if (mysqli_num_rows($validar_meca) > 0) {
             $data = $validar_meca->fetch_assoc();
+            session_start();
             $_SESSION['meca'] = array();
             $_SESSION['meca'][0] = $data['id_mecánico'];
             $_SESSION['meca'][1] = $data['nombre'];
@@ -36,6 +36,7 @@ if (isset($_POST['submit'])) {
         $validar_admin = mysqli_query($connex, "SELECT * FROM admin WHERE correo='$correo' and contra='$contra'");
         if (mysqli_num_rows($validar_admin) > 0) {
             $data = $validar_admin->fetch_assoc();
+            session_start();
             $_SESSION['admin'] = array();
             $_SESSION['admin'][0] = $data['id'];
             $_SESSION['admin'][1] = $data['nombre'];

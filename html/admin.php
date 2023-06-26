@@ -22,7 +22,7 @@ if (!isset($_SESSION['admin'])){
             <ul class="menu">
                 <li><a href="../html/admin.php" class="active">Index</a></li>
                 <li><a href="../html/mec.php">Mecánicos</a></li>
-                <li><h3>Bienvenido <?php echo $_SESSION['admin'][1]; ?></h3></li>
+                <li><h3>Bienvenido Administrador</h3></li>
                 <li><a href="../php/logOut.php"><i class="fa-solid fa-right-from-bracket"> Salir</i></a></li>
             </ul>
         </nav>

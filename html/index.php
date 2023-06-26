@@ -30,7 +30,7 @@ if (isset($_SESSION['admin'])){
                 <ul class="menu">
                     <li><a href="../html/index.php" class="active">Index</a></li>
                     <li class="<?php esconder(); ?>"><a href="../html/reserva.php?id=<?php echo $_SESSION['user'][0] ?>">Reserva</a></li>
-                    <li><a href="../html/vehiculo.php?id=<?php echo $_SESSION['user'][0]; ?>">Vehiculo</a></li>
+                    <li class="<?php esconder(); ?>"><a href="../html/vehiculo.php?id=<?php echo $_SESSION['user'][0]; ?>">Vehiculo</a></li>
                     <li class="<?php esconderV2(); ?>"><a href="../html/register.php">Registrarse</a></li>
                     <li class="<?php esconderV2(); ?>"><a href="../html/login.php">Iniciar Sesión</a></li>
                     <li class="<?php esconder(); ?>"><a href="../php/logOut.php"><i class="fa-solid fa-right-from-bracket"> Salir</i></a></li>

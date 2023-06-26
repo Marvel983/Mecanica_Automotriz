@@ -101,6 +101,7 @@
   margin: 4px;
   cursor: pointer;
   border: none;
+  color: #fff !important;
 }
 .alertify .ajs-footer .ajs-buttons.ajs-auxiliary {
   float: left;
@@ -225,6 +226,7 @@
 }
 .alertify.ajs-movable:not(.ajs-maximized) .ajs-header {
   cursor: move;
+  font-weight: 600;
 }
 .alertify.ajs-modeless .ajs-dimmer,
 .alertify.ajs-modeless .ajs-reset {

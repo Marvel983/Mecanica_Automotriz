@@ -120,12 +120,12 @@ class métodosCrud
     }
     // Crud para ingresar vehiculo en la base de datos
 
-    public function showDataMecvehi($id)
+    public function showDataMecvehi($sql)
     {
         $obj = new conexión();
         $conn = $obj->conectar();
 
-        $result = mysqli_query($conn, $id);
+        $result = mysqli_query($conn, $sql);
         $rows = mysqli_num_rows($result);
         if ($rows >= 1) {
             return mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -141,21 +141,22 @@ class métodosCrud
 
         return $result = mysqli_query($conn, $sql);
     }
+
     public function insertDataMecvehi($arr)
     {
         $obj = new conexión();
         $conn = $obj->conectar();
 
-        $sql = "INSERT INTO vehículo(modelo,
+        $sql = "INSERT INTO `vehículo-mec`(modelo,
              tipo,
              placa,
              dominio,
              color,
-             motor,
+             num_motor,
              clase, 
              marca,
              fecha,
-             id_vehículo,
+             mecanico
              ) values('$arr[0]',
              '$arr[1]',
              '$arr[2]',
@@ -170,6 +171,22 @@ class métodosCrud
 
         return $result = mysqli_query($conn, $sql);
     } 
+
+    public function createReport($arr)
+    {
+        $obj = new conexión();
+        $conn = $obj->conectar();
+
+        $sql = "INSERT INTO reporte(descripción,
+             fecha,
+             vehiculo_mec) 
+             values('$arr[0]',
+             '$arr[1]',
+             '$arr[2]'
+            )";
+
+        return $result = mysqli_query($conn, $sql);
+    }
 
 }
 

@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('../php/conex.php');
 require_once('../php/methods.php');
 

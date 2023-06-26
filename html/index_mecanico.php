@@ -22,10 +22,8 @@ if (!isset($_SESSION['meca'])){
         <nav class="navbar">
             <ul class="menu">
                 <li><a href="../html/admin.php" class="active">Index</a></li>
-                <li><a href="../html/reserva.php">Reserva</a></li>
-                <li><a href="#">Reporte</a></li>
-                <li><a href="../html/mecvehiculo.php">Vehículo</a></li>
-                <li><a href="#">Reserva</a></li>
+                <li><a href="../html/reporte.php">Reporte</a></li>
+                <li><a href="../html/mecvehiculo.php?id=<?php echo $_SESSION['meca'][0]; ?>">Vehículo</a></li>
                 <li><a href="../php/logOut.php"><i class="fa-solid fa-right-from-bracket"> Salir</i></a></li>
             </ul>
         </nav>
