@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="icon" href="../src/icon_auto.png" type="image/x-icon">
 </head>
 
 <body>
@@ -16,7 +17,7 @@
                 <ul class="menu">
                     <li><a href="../html/index.php" class="active">Index</a></li>
                     <li><a href="../html/reserva.php">Reserva</a></li>
-                    <li><a href="../html/register_vehiculo.php">Vehiculo</a></li>
+                    <li><a href="../html/vehiculo.php">Vehiculo</a></li>
                     <li><a href="../html/register.php">Registrarse</a></li>
                     <li><a href="../html/login.php">Iniciar Sesion</a></li>
 
