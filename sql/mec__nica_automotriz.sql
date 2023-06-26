@@ -304,6 +304,11 @@ ALTER TABLE `vehículo`
 --
 ALTER TABLE `mecánico`
   ADD CONSTRAINT `mecánico_ibfk_1` FOREIGN KEY (`id_taller`) REFERENCES `taller` (`id_taller`) ON DELETE CASCADE ON UPDATE CASCADE;
+  
+-- Filtros para la tabla `mecánico`
+--
+ALTER TABLE `vehículo`
+  ADD CONSTRAINT `vehículo_ibfk_1` FOREIGN KEY (`cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `reporte`

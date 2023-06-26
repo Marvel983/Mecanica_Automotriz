@@ -23,6 +23,7 @@ if (!isset($_SESSION['admin'])){
                 <li><a href="../html/admin.php" class="active">Index</a></li>
                 <li><a href="../html/mec.php">Mecánicos</a></li>
                 <li><h3>Bienvenido <?php echo $_SESSION['admin'][1]; ?></h3></li>
+                <li><a href="../php/logOut.php"><i class="fa-solid fa-right-from-bracket"> Salir</i></a></li>
             </ul>
         </nav>
     </header>
@@ -32,6 +33,7 @@ if (!isset($_SESSION['admin'])){
         </div>
         <img src="https://nattivos.com/wp-content/uploads/2019/08/meca1-1024x683.jpg" alt="Imagen de taller" loading="lazy">
     </main>
+    <script src="https://kit.fontawesome.com/7bcd40cb83.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

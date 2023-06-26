@@ -1,10 +1,10 @@
 <?php
-
 require_once('../php/conex.php');
 require_once('../php/methods.php');
 
+$id = $_GET['id'];
 $obj = new métodosCrud();
-$sql = "SELECT * FROM vehículo";
+$sql = "SELECT * FROM vehículo where cliente = $id";
 $datos = $obj->showDataVehi($sql);
 
 ?>
@@ -151,15 +151,15 @@ $datos = $obj->showDataVehi($sql);
                         $marca = trim($_POST['marca']);
                         $fecha = trim($_POST['fecha']);
                 
-                        $consulta = "INSERT INTO vehículo(modelo,tipo,placa,dominio,color,num_motor,clase,marca,fecha) 
-                            VALUES ('$modelo','$tipo','$placa','$dominio','$color','$motor','$clase','$marca','$fecha')";
+                        $consulta = "INSERT INTO vehículo(modelo,tipo,placa,dominio,color,num_motor,clase,marca,fecha, cliente) 
+                            VALUES ('$modelo','$tipo','$placa','$dominio','$color','$motor','$clase','$marca','$fecha', '$id')";
                 
                         $resultado = mysqli_query($connex, $consulta);
                         if ($resultado) {
                         ?>
                             <script>
                                 alert("Lo registraste correctamente");
-                                window.location.href = '../html/vehiculo.php';
+                                window.location.href = '../html/vehiculo.php?id=<?php echo $_SESSION['user'][0]; ?>';
                             </script>
                         <?php
                         } else {

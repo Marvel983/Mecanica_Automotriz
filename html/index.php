@@ -1,6 +1,15 @@
 <?php
 session_start();
 include("../php/functions.php");
+
+if (isset($_SESSION['meca'])){
+    header("Location: ../html/index_mecanico.php");
+}
+
+if (isset($_SESSION['admin'])){
+    header("Location: ../html/admin.php");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +21,6 @@ include("../php/functions.php");
     <title>Index</title>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="icon" href="../src/icon_auto.png" type="image/x-icon">
-    <script src="https://kit.fontawesome.com/7bcd40cb83.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -21,8 +29,8 @@ include("../php/functions.php");
             <nav class="navbar">
                 <ul class="menu">
                     <li><a href="../html/index.php" class="active">Index</a></li>
-                    <li><a href="../html/reserva.php?id=<?php echo $_SESSION['user'][0] ?>">Reserva</a></li>
-                    <li><a href="../html/vehiculo.php">Vehiculo</a></li>
+                    <li class="<?php esconder(); ?>"><a href="../html/reserva.php?id=<?php echo $_SESSION['user'][0] ?>">Reserva</a></li>
+                    <li><a href="../html/vehiculo.php?id=<?php echo $_SESSION['user'][0]; ?>">Vehiculo</a></li>
                     <li class="<?php esconderV2(); ?>"><a href="../html/register.php">Registrarse</a></li>
                     <li class="<?php esconderV2(); ?>"><a href="../html/login.php">Iniciar Sesión</a></li>
                     <li class="<?php esconder(); ?>"><a href="../php/logOut.php"><i class="fa-solid fa-right-from-bracket"> Salir</i></a></li>
@@ -53,6 +61,6 @@ include("../php/functions.php");
             year.innerHTML = y;
         </script>
     </footer>
+    <script src="https://kit.fontawesome.com/7bcd40cb83.js" crossorigin="anonymous"></script>
 </body>
-
 </html>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("../php/functions.php");
 
 if (!isset($_SESSION['meca'])){
     header("Location: ../html/login.php");
@@ -25,6 +26,7 @@ if (!isset($_SESSION['meca'])){
                 <li><a href="#">Reporte</a></li>
                 <li><a href="../html/vehiculo_mecanico.php">Vehículo</a></li>
                 <li><a href="#">Reserva</a></li>
+                <li><a href="../php/logOut.php"><i class="fa-solid fa-right-from-bracket"> Salir</i></a></li>
             </ul>
         </nav>
     </header>
