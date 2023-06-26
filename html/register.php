@@ -38,7 +38,7 @@
                 <input name="telefono" type="tel" required>
             </fieldset>
             <fieldset>
-                <label>Tarjeta de circulacion</label>
+                <label>Tarjeta de circulación</label>
                 <input name="tarjeta" type="text" required>
             </fieldset>
             <fieldset>

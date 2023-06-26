@@ -52,14 +52,6 @@ class métodosCrud
         return $result = mysqli_query($conn, $sql);
     }
 
-    public function deleteData($id){
-        $obj = new conexión();
-        $conn = $obj->conectar();
-
-        $sql = "DELETE FROM mecánico WHERE id_mecánico = $id";
-        
-        return $result = mysqli_query($conn, $sql);
-    }
 }
 
 ?>
