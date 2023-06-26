@@ -55,6 +55,17 @@ class métodosCrud
         return $result = mysqli_query($conn, $sql);
     }
 
+    /*public function updateData($arr){
+        $obj = new conexión();
+        $conn = $obj->conectar();
+
+        $sql = "UPDATE reservas SET name = '$arr[1]' where id = '$arr[0]'";
+
+        return $result = mysqli_query($conn, $sql);
+    }*/
+
+
+
     /**
      * @author RDGuevara
      * Crud Vehículo
@@ -109,12 +120,4 @@ class métodosCrud
     }
 }
 
-
-
-
-
-<<<<<<< HEAD
 ?>
-=======
-?>
->>>>>>> f3c2fc1b9945ede99b1f00cb96c9e00d8011d15b
