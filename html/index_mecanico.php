@@ -23,7 +23,7 @@ if (!isset($_SESSION['meca'])){
                 <li><a href="../html/admin.php" class="active">Index</a></li>
                 <li><a href="../html/reserva.php">Reserva</a></li>
                 <li><a href="#">Reporte</a></li>
-                <li><a href="../html/vehiculo_mecanico.php">Vehículo</a></li>
+                <li><a href="../html/mecvehiculo.php">Vehículo</a></li>
                 <li><a href="#">Reserva</a></li>
             </ul>
         </nav>
