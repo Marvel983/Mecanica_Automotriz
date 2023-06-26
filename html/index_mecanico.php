@@ -16,7 +16,7 @@
                 <li><a href="../html/admin.php" class="active">Index</a></li>
                 <li><a href="#">Reserva</a></li>
                 <li><a href="#">Reporte</a></li>
-                <li><a href="#">Vehículo</a></li>
+                <li><a href="../html/vehiculo_mecanico.php">Vehículo</a></li>
                 <li><a href="#">Reserva</a></li>
             </ul>
         </nav>
