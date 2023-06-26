@@ -37,14 +37,12 @@ dirección varchar(50) not null,
 fechaNacido date not null,
 genero varchar(15) not null,
 remuneración varchar(15) not null,
-
 id_taller int(11) not null,
 foreign Key (id_taller) references taller(id_taller)
 ON UPDATE CASCADE
 ON DELETE CASCADE
 );
 
-select * from vehículo;
 create table if not exists vehículo(
 id_vehículo int(11) auto_increment primary key,
 modelo varchar(25) not null,
@@ -56,7 +54,6 @@ num_motor varchar(15) not null,
 clase varchar(15) not null,
 marca varchar(15) not null,
 fecha date not null
-
 /*
 mecánico int(11) not null,
 constraint foreign Key (mecánico) references mecánico(id_mecánico)
@@ -88,13 +85,13 @@ create table if not exists reserva(
 id_reserva int(11) auto_increment primary key,
 razón varchar(200) not null,
 Costo varchar(15) not null,
-fecha_res date not null,
+fecha_res date not null
 /*servicio int not null,*/
 /*constraint foreign Key (servicio) references servicio(id_servicio),*/
 /*cliente int(11) not null,*/
-/*constraint foreign Key (cliente) references cliente(id_cliente)*/
+/*constraint foreign Key (cliente) references cliente(id_cliente)
 ON UPDATE CASCADE
-ON DELETE CASCADE
+ON DELETE CASCADE*/
 );
 
 create table if not exists reporte(

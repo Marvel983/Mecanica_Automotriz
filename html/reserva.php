@@ -16,6 +16,8 @@ $datos = $obj->showDataRes($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista Mecánicos</title>
     <link rel="stylesheet" href="../css/mec.css">
+    <link rel="stylesheet" href="../css/alertify.css">
+    <link rel="icon" href="../src/icon_auto.png" type="image/x-icon">
 </head>
 
 <body>
@@ -51,16 +53,11 @@ $datos = $obj->showDataRes($sql);
                             </td>
                             <td>
                                 <?php echo $key['fecha_res']; ?>
-                            </td> 
+                            </td>
                             <td>
-
-                            <td>
-                                <form method="POST">
-                                <button id="iButt" type="submit" name="iButt">
+                                <a id="iButt" name="iButt" onclick="del(<?php echo $key['id_reserva']; ?>)">
                                     <i class="fa-solid fa-trash"></i>
-                                </button>
-                                <input type="text" name="ide" id="idInput" value="<?php echo $key['id_reserva']; ?>">
-                                </form>
+                                </a>
                             </td>
                         </tr>
                         <?php
@@ -75,146 +72,74 @@ $datos = $obj->showDataRes($sql);
             <h2>Reservar</h2>
             <div class="container">
                 <form id="contact" action="" method="post">
-
                     <fieldset>
                         <input placeholder="Razón" name="razón" type="text" required>
                     </fieldset>
-
                     <fieldset>
                         <input placeholder="Costo" name="Costo" type="text" required>
                     </fieldset>
-
                     <fieldset>
                         <label for="date">Fecha de reserva</label>
                         <input name="fecha_res" type="date" required id="date">
                     </fieldset>
-
                     <fieldset>
-
-
-                    
-
-                    <fieldset>
-                        <button name="Reservar" type="submit" id="contact-submit" data-submit="...Sending">Crear Reserva</button>
+                        <button name="Reservar" type="submit" id="contact-submit" data-submit="...Sending">Crear
+                            Reserva</button>
                     </fieldset>
                 </form>
 
                 <?php
 
-$connex = new mysqli("localhost", "root", "", "mecánica_automotriz");
+                $connex = new mysqli("localhost", "root", "", "mecánica_automotriz");
 
-if (isset($_POST['Reservar'])) {
-    if (strlen($_POST['razón']) >= 1 && strlen($_POST['Costo']) >= 1 && strlen($_POST['fecha_res']) >= 1) {
-        $razón = trim($_POST['razón']);
-        $Costo = trim($_POST['Costo']);
-        $fecha_res = trim($_POST['fecha_res']);
+                if (isset($_POST['Reservar'])) {
+                    if (strlen($_POST['razón']) >= 1 && strlen($_POST['Costo']) >= 1 && strlen($_POST['fecha_res']) >= 1) {
+                        $razón = trim($_POST['razón']);
+                        $Costo = trim($_POST['Costo']);
+                        $fecha_res = trim($_POST['fecha_res']);
 
 
-        $consulta = "INSERT INTO reserva (razón,Costo,fecha_res) 
+                        $consulta = "INSERT INTO reserva (razón,Costo,fecha_res) 
             VALUES ('$razón','$Costo','$fecha_res')";
 
-        $resultado = mysqli_query($connex, $consulta);
-        if ($resultado) {
-        ?>
-            <script>
-                alert("Lo registraste correctamente");
-                window.location.href = '../html/reserva.php';
-            </script>
-        <?php
-        } else {
-        ?>
-            <script>
-                alert("Ocurrio un error");
-            </script>
-        <?php
-        }
-    }
-}
-
-               /* if (isset($_POST['Reservar'])) {
-                    $razón = trim($_POST['razon']);
-                    $Costo = trim($_POST['Costo']);
-                    $fecha_res = trim($_POST['fecha']);
-
-
-
-
-                    $arr = array(
-                        $razon,
-                        $Costo,
-                        $fecha,
-
-                    );
-
-                    $obj->insertDataRes($arr);
-
-                    echo "<script>
-                            window.location.href = '../html/reserva.php';
-                    </script>";
-
-                }*/ ?>
-
-                <?php
-                if (isset($_POST['iButt'])) {
-                    $id = $_POST['ide'];
-
-                    $obj->deleteDataRes($id);
+                        $resultado = mysqli_query($connex, $consulta);
+                        if ($resultado) {
+                            ?>
+                            <script>
+                                alert("Lo registraste correctamente");
+                                window.location.href = '../html/reserva.php';
+                            </script>
+                            <?php
+                        } else {
+                            ?>
+                            <script>
+                                alert("Ocurrio un error");
+                            </script>
+                            <?php
+                        }
+                    }
                 }
+
                 ?>
             </div>
         </div>
 
         <script src="https://kit.fontawesome.com/7bcd40cb83.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/7bcd40cb83.js" crossorigin="anonymous"></script>
+        <script src="../js/j_query.js"></script>
+        <script src="../js/alertify.js"></script>
+        <script>
+            function del(id) {
+                alertify.confirm("¿Desea eliminar al reserva?",
+                    function () {
+                        window.location = "../php/reserva_db.php?id=" + id;
+                        alertify.success('Mecánico eliminado');
+                    },
+                    function () {
+                        alertify.error('Cancelado');
+                    });
+            }
+        </script>
 </body>
 
 </html>
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserva</title>
-    <link rel="stylesheet" href="../css/reserva.css">
-    <link rel="icon" href="../src/icon_auto.png" type="image/x-icon">
-</head>
-
-<body>
-    <div class="container">
-        <form id="contact" action="" method="post">
-            <h3>Reservación</h3>
-            <h4>Mecanica Automotriz</h4>
-            <fieldset>
-                <label>Correo Electronico</label>
-                <input name="nombre" type="text" required autofocus>
-            </fieldset>
-            <fieldset>
-                <label>Razon</label>
-                <textarea name="" tabindex="5" required></textarea>
-            </fieldset>
-            <fieldset>
-                <label>Servicio</label>
-                <input name="costo" type="text" required autofocus>
-            </fieldset>
-            <fieldset>
-                <label>Fecha de reserva</label>
-                <input name="fecha_reserva" type="date" required autofocus>
-            </fieldset>
-            <fieldset>
-                <button type="button"><a href="../html/index.php">Regresar</a></button>
-            </fieldset>
-            <fieldset>
-                <button name="register" type="submit" id="contact-submit" data-submit="...Sending">Enviar</button>
-            </fieldset>
-        </form>
-
-
-
-    </div>
-</body>
-
-</html> -->
-
- <?php
-        include("../php/reserva_db.php");
-         ?> 

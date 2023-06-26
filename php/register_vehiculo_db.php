@@ -27,7 +27,7 @@ if (isset($_POST['register_vehiculo'])) {
         } else {
         ?>
             <script>
-                alert("Ocurrio un error");
+                alert("Ocurrió un error");
             </script>
         <?php
         }

@@ -17,7 +17,6 @@ $datos = $obj->showData($sql);
     <title>Lista Mecánicos</title>
     <link rel="stylesheet" href="../css/mec.css">
     <link rel="stylesheet" href="../css/alertify.css">
-    <link rel="shortcut icon" href="../src/icons8-wrench-80.png" type="image/x-icon">
     <link rel="icon" href="../src/icon_auto.png" type="image/x-icon">
 </head>
 
@@ -83,12 +82,9 @@ $datos = $obj->showData($sql);
                                 <?php echo $key['id_taller']; ?>
                             </td>
                             <td>
-                                <form method="POST">
-                                <button id="iButt" type="submit" name="iButt">
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
-                                <input type="text" name="ide" id="idInput" value="<?php echo $key['id_mecánico']; ?>">
-                                </form>
+                                <a id="iButt" name="iButt" onclick="del(<?php echo $key['id_mecánico']; ?>)">
+                                        <i class="fa-solid fa-trash"></i>
+                                </a>
                             </td>
                         </tr>
                 <?php
@@ -154,8 +150,8 @@ $datos = $obj->showData($sql);
                 </form>
                 <?php
                 if (isset($_POST['mecaForm'])) {
-                    $nombre = $_POST['nombre'];
-                    $apellido = $_POST['apellido'];
+                    $nombre = trim($_POST['nombre']);
+                    $apellido = trim($_POST['apellido']);
                     $rol = trim($_POST['rol']);
                     $DUI = trim($_POST['dui']);
                     $tel = trim($_POST['teléfono']);
