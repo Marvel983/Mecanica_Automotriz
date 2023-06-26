@@ -117,58 +117,6 @@ class métodosCrud
     }
 
 
-    //Crud para el vehiculo por parte del usuario
-    public function showDataVehi($sql)
-    {
-        $obj = new conexión();
-        $conn = $obj->conectar();
-
-        $result = mysqli_query($conn, $sql);
-        $rows = mysqli_num_rows($result);
-        if ($rows >= 1) {
-            return mysqli_fetch_all($result, MYSQLI_ASSOC);
-        } else {
-            return false;
-        }
-    }
-    /*
-    public function insertDataVehi($arr)
-    {
-        $obj = new conexión();
-        $conn = $obj->conectar();
-
-        $sql = "INSERT INTO vehículo(modelo,
-             tipo,
-             placa,
-             dominio,
-             color,
-             num_motor, 
-             clase,
-             marca,
-             fecha) values('$arr[0]',
-             '$arr[1]',
-             '$arr[2]',
-             '$arr[3]',
-             '$arr[4]',
-             '$arr[5]',
-             '$arr[6]',
-             '$arr[7]',
-             '$arr[8]',
-            )";
-
-        return $result = mysqli_query($conn, $sql);
-    }*/
-
-    public function deleteDataVehi($id)
-    {
-        $obj = new conexión();
-        $conn = $obj->conectar();
-
-        $sql = "DELETE FROM vehículo WHERE id_vehículo = $id";
-
-        return $result = mysqli_query($conn, $sql);
-    }
-
     // Crud para la reserva por parte del usuario
     public function showDataRes($sql)
     {
@@ -194,12 +142,9 @@ class métodosCrud
         return $result = mysqli_query($conn, $sql);
     }
 }
-<<<<<<< HEAD
 
 
 
 
 
 ?>
-=======
->>>>>>> 04f877a06131c3662a26a264c63fa01ec024fd13
