@@ -42,6 +42,9 @@ id_taller int(11) not null,
 foreign Key (id_taller) references taller(id_taller)
 ON UPDATE CASCADE
 ON DELETE CASCADE
+
+-- cargo int not null,
+-- constraint foreign Key (cargo) references cargo(id)
 );
 
 select * from vehículo;
@@ -77,6 +80,9 @@ tarjeta varchar(25) not null,
 dui varchar(25) not null,
 fecha_nac  date not null,
 contra varchar(50) NOT NULL
+
+cargo int not null,
+constraint foreign Key (cargo) references cargo(id)
 /*
 vehículo int(11) not null,
 constraint foreign Key (vehículo) references vehículo(id_vehículo)
@@ -107,4 +113,19 @@ cliente int(11) not null,
 constraint foreign Key (cliente) references cliente(id_cliente)
 ON UPDATE CASCADE
 ON DELETE CASCADE
+
+create table if not exists admin(
+id int auto_increment primary key,
+correo varchar(100) not null,
+
+cargo int not null,
+constraint foreign Key (cargo) references cargo(id)
+ON UPDATE CASCADE
+ON DELETE CASCADE
+);
+
+create table if not exists cargo(
+id int primary key auto_increment,
+descripción varchar(250) not null
+);
 );
