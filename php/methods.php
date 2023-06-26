@@ -169,7 +169,7 @@ class métodosCrud
             )";
 
         return $result = mysqli_query($conn, $sql);
-    }  $modelo,
+    } 
 
 }
 
