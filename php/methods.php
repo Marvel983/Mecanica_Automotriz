@@ -125,7 +125,7 @@ class métodosCrud
         $obj = new conexión();
         $conn = $obj->conectar();
 
-        $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($conn, $id);
         $rows = mysqli_num_rows($result);
         if ($rows >= 1) {
             return mysqli_fetch_all($result, MYSQLI_ASSOC);
