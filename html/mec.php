@@ -16,6 +16,8 @@ $datos = $obj->showData($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista Mecánicos</title>
     <link rel="stylesheet" href="../css/mec.css">
+    <link rel="stylesheet" href="../css/alertify.css">
+    <link rel="shortcut icon" href="../src/icons8-wrench-80.png" type="image/x-icon">
     <link rel="icon" href="../src/icon_auto.png" type="image/x-icon">
 </head>
 
@@ -82,10 +84,10 @@ $datos = $obj->showData($sql);
                             </td>
                             <td>
                                 <form method="POST">
-                                    <button id="iButt" type="submit" name="iButt">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button>
-                                    <input type="text" name="ide" id="idInput" value="<?php echo $key['id_mecánico']; ?>">
+                                <button id="iButt" type="submit" name="iButt">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                                <input type="text" name="ide" id="idInput" value="<?php echo $key['id_mecánico']; ?>">
                                 </form>
                             </td>
                         </tr>
@@ -181,18 +183,25 @@ $datos = $obj->showData($sql);
                     echo "<script>
                             window.location.href = '../html/mec.php';
                     </script>";
+
                 } ?>
-
-                <?php
-                if (isset($_POST['iButt'])) {
-                    $id = $_POST['ide'];
-
-                    $obj->deleteData($id);
-                }
-                ?>
             </div>
         </div>
         <script src="https://kit.fontawesome.com/7bcd40cb83.js" crossorigin="anonymous"></script>
+        <script src="../js/j_query.js"></script>
+        <script src="../js/alertify.js"></script>
+        <script>
+            function del(id) {
+                alertify.confirm("¿Desea eliminar el mecánico?",
+                    function () {
+                        window.location = "../php/del_mec.php?id=" + id;
+                        alertify.success('Mecánico eliminado');
+                    },
+                    function () {
+                        alertify.error('Cancelado');
+                    });
+            }
+        </script>
 </body>
 
 </html>
