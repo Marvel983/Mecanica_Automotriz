@@ -48,7 +48,7 @@ $datos = $obj->showData($sql);
                 <?php
                 if ($datos) {
                     foreach ($datos as $key) {
-                        ?>
+                ?>
                         <tr>
                             <td>
                                 <?php echo $key['nombre']; ?>
@@ -82,14 +82,14 @@ $datos = $obj->showData($sql);
                             </td>
                             <td>
                                 <form method="POST">
-                                <button id="iButt" type="submit" name="iButt">
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
-                                <input type="text" name="ide" id="idInput" value="<?php echo $key['id_mecánico']; ?>">
+                                    <button id="iButt" type="submit" name="iButt">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                    <input type="text" name="ide" id="idInput" value="<?php echo $key['id_mecánico']; ?>">
                                 </form>
                             </td>
                         </tr>
-                        <?php
+                <?php
                     }
                 } else {
                     echo "<h4>No se encontraron datos en la Base de datos</h4>";
@@ -181,7 +181,6 @@ $datos = $obj->showData($sql);
                     echo "<script>
                             window.location.href = '../html/mec.php';
                     </script>";
-
                 } ?>
 
                 <?php

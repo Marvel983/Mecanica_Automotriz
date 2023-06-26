@@ -18,7 +18,7 @@ if (isset($_POST['register_vehiculo'])) {
 
         $resultado = mysqli_query($connex, $consulta);
         if ($resultado) {
-?>
+        ?>
             <script>
                 alert("Lo registraste correctamente");
                 window.location.href = '../html/index.php';
@@ -29,7 +29,7 @@ if (isset($_POST['register_vehiculo'])) {
             <script>
                 alert("Ocurrio un error");
             </script>
-<?php
+        <?php
         }
     }
 }
