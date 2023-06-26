@@ -31,22 +31,28 @@ if (isset($_POST['submit'])) {
         //     window.location = '../html/admin.php';
         //   </script>";            
         // }
-
-
-
         $validar_login = mysqli_query($connex, "SELECT * FROM cliente WHERE correo='$correo' and contra='$contra'");
 
         if (mysqli_num_rows($validar_login) > 0) {
-            $_SESSION['usuario'] = $correo;
+            $data = $validar_login->fetch_assoc();
+            if($data['cargo' == 2]){
+                $_SESSION['usuario'] = $correo;
 
-            echo "<script>
-            alert('A iniciado sesion correctamente');
-            window.location = '../html/index.php';
-          </script>";
+                echo "<script>
+                alert('A iniciado sesión correctamente');
+                window.location = '../html/index.php';
+              </script>";
+            }else{
+                echo "<script>
+                alert('A iniciado sesión correctamente');
+                window.location = '../html/admin.php';
+              </script>";
+            }
+
         } else {
             echo '
             <script>
-                alert("UPS! algo salio mal, intentelo nuevamente")
+                alert("UPS! algo salio mal, inténtelo nuevamente")
             </script>
             ';
         }

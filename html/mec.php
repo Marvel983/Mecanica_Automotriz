@@ -108,9 +108,9 @@ $datos = $obj->showData($sql);
                     <fieldset>
                         <select name="rol">
                             <option value="" selected disabled>Rol</option>
-                            <option value="Pintor">Pintor</option>
-                            <option value=""></option>
-                            <option value=""></option>
+                            <option value="Pintor">Pintura</option>
+                            <option value="Limpieza"></option>
+                            <option value="Mantenimiento"></option>
                         </select>
                     </fieldset>
                     <fieldset>

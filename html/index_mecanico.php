@@ -13,10 +13,9 @@
         <nav class="navbar">
             <ul class="menu">
                 <li><a href="../html/admin.php" class="active">Index</a></li>
-                <li><a href="#">Reserva</a></li>
+                <li><a href="../html/reserva.php">Reserva</a></li>
                 <li><a href="#">Reporte</a></li>
-                <li><a href="#">Vehículo</a></li>
-                <li><a href="#">Reserva</a></li>
+                <li><a href="../html/register_vehiculo.php">Vehículo</a></li>
             </ul>
         </nav>
     </header>
