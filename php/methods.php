@@ -113,4 +113,8 @@ class métodosCrud
 
 
 
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> f3c2fc1b9945ede99b1f00cb96c9e00d8011d15b
