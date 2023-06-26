@@ -18,6 +18,7 @@ $datos = $obj->showData($sql);
     <link rel="stylesheet" href="../css/mec.css">
     <link rel="stylesheet" href="../css/alertify.css">
     <link rel="shortcut icon" href="../src/icons8-wrench-80.png" type="image/x-icon">
+    <link rel="icon" href="../src/icon_auto.png" type="image/x-icon">
 </head>
 
 <body>

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="icon" href="../src/icon_auto.png" type="image/x-icon">
 </head>
 
 <body>
@@ -15,10 +16,12 @@
             <h3>Iniciar Sesión</h3>
             <h4>Mecanica Automotriz</h4>
             <fieldset>
-                <input placeholder="Correo Electronico" name="correo" type="email">
+                <label>Correo Electronico</label>
+                <input name="correo" type="email">
             </fieldset>
             <fieldset>
-                <input placeholder="Contraseña" name="contra" type="password">
+                <label>Contraseña</label>
+                <input name="contra" type="password">
             </fieldset>
             <fieldset>
                 <button type="button"><a href="../html/index.php">Regresar</a></button>
