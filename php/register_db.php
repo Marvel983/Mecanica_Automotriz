@@ -20,7 +20,7 @@ if (isset($_POST['register'])) {
         $nacimiento = trim($_POST['nacimiento']);
         $contra = trim($_POST['contra']);
 
-        //Consulta
+        //Consulta... revisar sql
         $consulta = "INSERT INTO cliente (nombre, apellido, correo, genero, dirección, teléfono, tarjeta, dui, fecha_nac, contra)
             VALUES ('$nombre','$apellido','$correo','$genero','$direccion','$telefono','$tarjeta','$dui','$nacimiento','$contra')";
 

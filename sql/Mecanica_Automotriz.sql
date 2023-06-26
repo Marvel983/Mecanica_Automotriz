@@ -84,10 +84,10 @@ id_reserva int(11) auto_increment primary key,
 razón varchar(200) not null,
 Costo varchar(15) not null,
 fecha_res date not null,
-servicio int not null,
-constraint foreign Key (servicio) references servicio(id_servicio),
-cliente int(11) not null,
-constraint foreign Key (cliente) references cliente(id_cliente)
+/*servicio int not null,*/
+/*constraint foreign Key (servicio) references servicio(id_servicio),*/
+/*cliente int(11) not null,*/
+/*constraint foreign Key (cliente) references cliente(id_cliente)*/
 ON UPDATE CASCADE
 ON DELETE CASCADE
 );
