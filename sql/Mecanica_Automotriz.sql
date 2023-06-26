@@ -10,12 +10,6 @@ instalaciones int not null,
 dirección varchar(100) not null
 );
 
-create table if not exists cargo(
-id int primary key auto_increment,
-descripción varchar(250) not null
-);
-
-
 create table if not exists servicio(
 id_servicio int(11) auto_increment primary key ,
 tipo varchar(100) not null,
@@ -30,6 +24,7 @@ create table if not exists mecánico(
 id_mecánico int(11) auto_increment primary key ,
 nombre varchar(50) not null,
 apellido varchar(50) not null,
+correo varchar(250) not null,
 rol varchar(25) not null,
 dui varchar(20) not null,
 teléfono varchar(10) not null,
@@ -38,6 +33,7 @@ fechaNacido date not null,
 genero varchar(15) not null,
 remuneración varchar(15) not null,
 id_taller int(11) not null,
+contra varchar(100) not null,
 foreign Key (id_taller) references taller(id_taller)
 ON UPDATE CASCADE
 ON DELETE CASCADE
@@ -53,13 +49,11 @@ color varchar(15) not null,
 num_motor varchar(15) not null,
 clase varchar(15) not null,
 marca varchar(15) not null,
-fecha date not null
-/*
-mecánico int(11) not null,
-constraint foreign Key (mecánico) references mecánico(id_mecánico)
+fecha date not null,
+cliente int(11) not null,
+constraint foreign Key (cliente) references cliente(id_cliente)
 ON UPDATE CASCADE
 ON DELETE CASCADE
-*/
 );
 
 create table if not exists cliente(
@@ -73,7 +67,7 @@ teléfono varchar(25) not null,
 tarjeta varchar(25) not null,
 dui varchar(25) not null,
 fecha_nac  date not null,
-contra varchar(50) NOT NULL
+contra varchar(100) NOT NULL
 /*
 vehículo int(11) not null,
 constraint foreign Key (vehículo) references vehículo(id_vehículo)
@@ -85,13 +79,11 @@ create table if not exists reserva(
 id_reserva int(11) auto_increment primary key,
 razón varchar(200) not null,
 Costo varchar(15) not null,
-fecha_res date not null
-/*servicio int not null,*/
-/*constraint foreign Key (servicio) references servicio(id_servicio),*/
-/*cliente int(11) not null,*/
-/*constraint foreign Key (cliente) references cliente(id_cliente)
+fecha_res date not null,
+cliente int(11) not null,
+constraint foreign Key (cliente) references cliente(id_cliente)
 ON UPDATE CASCADE
-ON DELETE CASCADE*/
+ON DELETE CASCADE
 );
 
 create table if not exists reporte(
@@ -104,4 +96,10 @@ cliente int(11) not null,
 constraint foreign Key (cliente) references cliente(id_cliente)
 ON UPDATE CASCADE
 ON DELETE CASCADE
+);
+
+create table if not exists admin(
+id int auto_increment primary key,
+correo varchar(250) not null,
+contra varchar(250) not null
 );

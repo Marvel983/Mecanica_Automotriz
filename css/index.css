@@ -127,3 +127,7 @@ footer h6 {
     overflow-x: auto;
   }
 }
+
+.esconder{
+    display: none;
+}

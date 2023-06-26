@@ -26,6 +26,7 @@ $datos = $obj->showData($sql);
             <ul class="menu">
                 <li><a href="../html/admin.php">Index</a></li>
                 <li><a href="../html/mec.php" class="active">Mecánicos</a></li>
+                <li><a href="../php/logOut.php"><i class="fa-solid fa-right-from-bracket"> Salir</i></a></li>
             </ul>
         </nav>
     </header>
@@ -109,8 +110,8 @@ $datos = $obj->showData($sql);
                         <select name="rol">
                             <option value="" selected disabled>Rol</option>
                             <option value="Pintor">Pintura</option>
-                            <option value="Limpieza"></option>
-                            <option value="Mantenimiento"></option>
+                            <option value="Limpieza">Limpieza</option>
+                            <option value="Mantenimiento">Mantenimiento</option>
                         </select>
                     </fieldset>
                     <fieldset>
@@ -144,6 +145,12 @@ $datos = $obj->showData($sql);
                         </select>
                     </fieldset>
                     <fieldset>
+                        <input placeholder="Contraseña" name="contra" type="password" required>
+                    </fieldset>
+                    <fieldset>
+                        <input placeholder="Correo" name="correo" type="email" required>
+                    </fieldset>
+                    <fieldset>
                         <button name="mecaForm" type="submit" id="contact-submit" data-submit="...Sending">Agregar
                             Mecánico</button>
                     </fieldset>
@@ -152,6 +159,7 @@ $datos = $obj->showData($sql);
                 if (isset($_POST['mecaForm'])) {
                     $nombre = trim($_POST['nombre']);
                     $apellido = trim($_POST['apellido']);
+                    $correo = trim($_POST['correo']);
                     $rol = trim($_POST['rol']);
                     $DUI = trim($_POST['dui']);
                     $tel = trim($_POST['teléfono']);
@@ -160,10 +168,12 @@ $datos = $obj->showData($sql);
                     $genero = trim($_POST['genero']);
                     $pago = trim($_POST['pago']);
                     $taller = trim($_POST['taller']);
+                    $contra = trim($_POST['contra']);
 
                     $arr = array(
                         $nombre,
                         $apellido,
+                        $correo,
                         $rol,
                         $DUI,
                         $tel,
@@ -171,7 +181,8 @@ $datos = $obj->showData($sql);
                         $fecha,
                         $genero,
                         $pago,
-                        $taller
+                        $taller,
+                        $contra
                     );
 
                     $obj->insertData($arr);

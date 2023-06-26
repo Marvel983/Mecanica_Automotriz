@@ -1,4 +1,5 @@
 <?php
+session_start();
 $connex = new mysqli("localhost", "root", "", "mecánica_automotriz");
 
 if (isset($_POST['register_vehiculo'])) {

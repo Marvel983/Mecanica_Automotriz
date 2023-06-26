@@ -1,10 +1,13 @@
 <?php
-
+session_start();
 require_once('../php/conex.php');
 require_once('../php/methods.php');
 
+
+$id = $_SESSION['user'][0];
+
 $obj = new métodosCrud();
-$sql = "SELECT * FROM reserva";
+$sql = "SELECT * FROM reserva where id_cliente = '$id'";
 $datos = $obj->showDataRes($sql);
 
 ?>
@@ -42,7 +45,7 @@ $datos = $obj->showDataRes($sql);
                 <?php
                 if ($datos) {
                     foreach ($datos as $key) {
-                        ?>
+                    ?>
                         <tr>
 
                             <td>
@@ -99,8 +102,8 @@ $datos = $obj->showDataRes($sql);
                         $fecha_res = trim($_POST['fecha_res']);
 
 
-                        $consulta = "INSERT INTO reserva (razón,Costo,fecha_res) 
-            VALUES ('$razón','$Costo','$fecha_res')";
+                        $consulta = "INSERT INTO reserva (razón,Costo,fecha_res,id_cliente) 
+            VALUES ('$razón','$Costo','$fecha_res', '$id')";
 
                         $resultado = mysqli_query($connex, $consulta);
                         if ($resultado) {

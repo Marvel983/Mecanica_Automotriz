@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+if (isset($_SESSION['user'])){
+    header("Location: ../html/index.php");
+}
+
+if (isset($_SESSION['meca'])){
+    header("Location: ../html/index_mecanico.php");
+}
+
+if (isset($_SESSION['admin'])){
+    header("Location: ../html/admin.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,9 +29,9 @@
     <div class="container">
     <form id="contact" action="" method="POST">
             <h3>Iniciar Sesión</h3>
-            <h4>Mecanica Automotriz</h4>
+            <h4>Mecánica Automotriz</h4>
             <fieldset>
-                <label>Correo Electronico</label>
+                <label>Correo Electrónico</label>
                 <input name="correo" type="email">
             </fieldset>
             <fieldset>

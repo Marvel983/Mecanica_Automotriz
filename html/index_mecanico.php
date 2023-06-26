@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['meca'])){
+    header("Location: ../html/login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,6 +14,7 @@
     <title>Mecánico</title>
     <link rel="stylesheet" href="../css/mec.css">
     <link rel="icon" href="../src/icon_auto.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/7bcd40cb83.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -16,6 +24,8 @@
                 <li><a href="../html/reserva.php">Reserva</a></li>
                 <li><a href="#">Reporte</a></li>
                 <li><a href="../html/register_vehiculo.php">Vehículo</a></li>
+                <li><a href="../php/logOut.php"><i class="fa-solid fa-right-from-bracket"> Salir</i></a></li>
+                <li><h3>Bienvenido <?php echo $_SESSION['meca'][1]; ?></h3></li>
             </ul>
         </nav>
     </header>

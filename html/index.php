@@ -1,3 +1,7 @@
+<?php
+session_start();
+include("../php/functions.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +12,7 @@
     <title>Index</title>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="icon" href="../src/icon_auto.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/7bcd40cb83.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -16,11 +21,12 @@
             <nav class="navbar">
                 <ul class="menu">
                     <li><a href="../html/index.php" class="active">Index</a></li>
-                    <li><a href="../html/reserva.php">Reserva</a></li>
+                    <li><a href="../html/reserva.php?id=<?php echo $_SESSION['user'][0] ?>">Reserva</a></li>
                     <li><a href="../html/vehiculo.php">Vehiculo</a></li>
-                    <li><a href="../html/register.php">Registrarse</a></li>
-                    <li><a href="../html/login.php">Iniciar Sesion</a></li>
-
+                    <li class="<?php esconderV2(); ?>"><a href="../html/register.php">Registrarse</a></li>
+                    <li class="<?php esconderV2(); ?>"><a href="../html/login.php">Iniciar Sesión</a></li>
+                    <li class="<?php esconder(); ?>"><a href="../php/logOut.php"><i class="fa-solid fa-right-from-bracket"> Salir</i></a></li>
+                    <li class="<?php esconder(); ?>"><h3>Bienvenido <?php echo $_SESSION['user'][1]; ?></h3></li>
                 </ul>
             </nav>
         </header>

@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['admin'])){
+    header("Location: ../html/login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +22,7 @@
             <ul class="menu">
                 <li><a href="../html/admin.php" class="active">Index</a></li>
                 <li><a href="../html/mec.php">Mecánicos</a></li>
+                <li><h3>Bienvenido <?php echo $_SESSION['admin'][1]; ?></h3></li>
             </ul>
         </nav>
     </header>

@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+if (isset($_SESSION['user'])){
+    header("Location: ../html/index.php");
+}
+
+if (isset($_SESSION['meca'])){
+    header("Location: ../html/index_mecanico.php");
+}
+
+if (isset($_SESSION['admin'])){
+    header("Location: ../html/admin.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

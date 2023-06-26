@@ -29,6 +29,7 @@ class métodosCrud
 
         $sql = "INSERT INTO mecánico(nombre,
              apellido,
+             correo,
              rol,
              dui,
              teléfono,
@@ -36,7 +37,8 @@ class métodosCrud
              fechaNacido,
              genero,
              remuneración,
-             id_taller) values('$arr[0]',
+             id_taller,
+             contra) values('$arr[0]',
              '$arr[1]',
              '$arr[2]',
              '$arr[3]',
@@ -45,7 +47,9 @@ class métodosCrud
              '$arr[6]',
              '$arr[7]',
              '$arr[8]',
-             '$arr[9]'
+             '$arr[9]',
+             '$arr[10]',
+             '$arr[11]'
             )";
 
         return $result = mysqli_query($conn, $sql);
@@ -80,8 +84,7 @@ class métodosCrud
     }
 
 
-    
-
+    // Crud para la reserva por parte del usuario
     public function showDataRes($sql)
     {
         $obj = new conexión();
@@ -105,3 +108,9 @@ class métodosCrud
         return $result = mysqli_query($conn, $sql);
     }
 }
+
+
+
+
+
+?>
